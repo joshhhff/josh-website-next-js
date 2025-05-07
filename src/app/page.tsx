@@ -2,9 +2,11 @@ import Image from "next/image";
 import homeImage from "../../public/home.jpg";
 import Button from "./components/button";
 import Link from "next/link";
+import Footer from "./components/footer";
 
 export default function Home() {
     return (
+        <>
         <div className="page-container">
             <div className="landing-title" style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                 <Image src={homeImage} alt="Josh Ford" layout="fill" objectFit="cover" />
@@ -16,5 +18,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        {/* <Footer /> */}
+        </>
     );
 }

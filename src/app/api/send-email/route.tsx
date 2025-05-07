@@ -24,8 +24,6 @@ export async function POST(request: Request) {
                 pass: process.env.GMAIL_APP_PASSWORD,
             },
             secure: false,
-            logger: true,
-            debug: true,
             ignoreTLS: true // add this 
         });
 

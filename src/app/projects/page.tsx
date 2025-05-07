@@ -23,7 +23,7 @@ export default function Projects() {
                                 <br /><br />
                                 This allowed users to pack items into boxes straight after selecting the Staging Location when picking, and then be giving all shipment details related to that order.
                                 <br/><br/>
-                                To finish it off, it then also linked into a custom built direct Carrier Integration where users could select their chosen carrier, register the shipment with the carrier, and retrieve the number of shipping labels needed.
+                                To finish it off, it then also linked into a custom built direct Carrier Integration which was built by another developer.
                             </>
                         }
                         isProject={true}
@@ -39,7 +39,7 @@ export default function Projects() {
                         link="/projects/trustpilotIntegration"
                     />
                     <ProjectCard 
-                        title="EDI 856 Ship Notice Generation" 
+                        title="Auto-ASN Generation" 
                         date="September 2024"
                         description="When Item Fulfillments were shipped in NetSuite, an 856 Ship Notice EDI file would be generated including all shipment information, and then transferred via SFTP."
                         isProject={true}
@@ -72,10 +72,11 @@ export default function Projects() {
                 <div>
                     <ProjectCard 
                         title="NetSuite AI Chatbot" 
-                        rating={5}
+                        
                         description="A custom AI Chatbot that is integrated into NetSuite to help users with common queries and tasks."
                         isProject={false}
                         isNew={true}
+                        link='/products/aiChatbot'
                     />
                 </div>
             </div>

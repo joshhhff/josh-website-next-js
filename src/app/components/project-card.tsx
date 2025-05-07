@@ -25,10 +25,10 @@ export default function ProjectCard({title, rating, date, description, isProject
                     <p style={{ fontSize: '1rem', color: '#b2b2b2', marginRight: '8px' }}>{date}</p>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                         <h1 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{title}</h1>
-                        {isNew && <span style={{ marginLeft: '8px', padding: '4px 8px', backgroundColor: '#007BFF', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 'bold', color: 'white' }}>NEW</span>}
+                        {isNew && <span style={{ marginLeft: '8px', padding: '4px 8px', backgroundColor: '#007BFF', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 'bold', color: 'white' }}>Coming Soon</span>}
                     </div>
                 </div>
-                {!isProject && (
+                {!isProject && rating && (
                     <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
                         <FaStar />
                         <span style={{ marginLeft: '4px' }}>{rating}</span>

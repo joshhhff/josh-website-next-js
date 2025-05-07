@@ -13,13 +13,13 @@ export const ProjectKeys = {
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>Pick2Ship was designed to allow warehouse operators to skip Ship Central in the NetSuite Mobile App. Once users selected their Staging Bin and successfully picked their order in NetSuite WMS, a <b>Ship</b> button would be present for certain warehouses. They were then able to select how many boxes that would be included in the shipment, pack items into different boxes, and would then be presented with all shipment information before shipment confirmation.</p>
                         <br/>
-                        <p style={{ color: '#b2b2b2' }}>After confirming the shipment details, the user would then be directed to a custom built direct Carrier Integration. Integrating popular carriers such as Royal Mail, FedEx, DPD, ACP Overnight directly into their NetSuite account. Once choosing carrier and confirming the shipment once more, the shipment would be registered with their chosen carrier and shipping labels would be printed directly to their chosen label printer.</p>
+                        <p style={{ color: '#b2b2b2' }}>After confirming the shipment details, the user would then be directed to a custom carrier integration built by another developer. This allowed them to register the orders and retrieve the shipping labels for the orders to be sent.</p>
                         <br/>
                         <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Project Components</h1>
                         <br/>
                         <ul style={{ color: '#b2b2b2'}}>
                             <li>Pick2Ship - Custom extension on WMS</li>
-                            <li>Direct Carrier Integration - 4 carriers & company van option</li>
+                            <li>Direct Carrier Integration - Handled by another developer</li>
                             <li>PrintNode Integration - Printing of Shipping Labels to Label Printers</li>
                             <li>Employee Preferred Printers - Allowing Warehouse Operators to set their preferred printers on their Employee record in NetSuite to automatically select and print to their printers on their workstations</li>
                         </ul>
@@ -59,25 +59,49 @@ export const ProjectKeys = {
         }
     },
     ediShipNotice: {
-        title: 'EDI 856 Ship Notice Generation',
-        date: 'June 2024',
-        timeSpent: '3 months',
+        title: 'Auto-ASN Generation',
+        date: 'October 2024',
+        timeSpent: '1 month + User Acceptance Testing',
         content: () => {
             return (
                 <>
-                    <h1>EDI 856 Ship Notice Generation</h1>
+                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Project Summary</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>When Item Fulfillments were marked as shipping in NetSuite, an ASN (856 Advanced Shipping Notice) was generated and transferred via SFTP.</p>
+                        <br/>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Project Components</h1>
+                        <br/>
+                        <ul style={{ color: '#b2b2b2'}}>
+                            <li>User Event Script - Script responsible for generating ASNs. This would trigger when Item Fulfillment is updated to Shipped status</li>
+                            <li>Custom Record - Custom record to store EDI Sequence numbers which increment based on every ASN sent</li>
+                        </ul>
+                        <br/>
+                    </div>
                 </>
             );
         }
     },
+}
+
+export const ProductKeys = {
     aiChatbot: {
         title: 'NetSuite AI Chatbot',
-        date: 'June 2024',
-        timeSpent: '3 months',
+        price: 'Coming Soon...',
         content: () => {
             return (
                 <>
-                    <h1>NetSuite AI Chatbot</h1>
+                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Product Information</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>A custom AI chatbot integrated within NetSuite. Ask general queries, or ask about specific transactions within your NetSuite instance. This AI Chatbot allows users to ask about transactions, query employee information, or even query about inventory information for all or specific locations.</p>
+                        <br/>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
+                        <video width="100%" height="auto" controls preload="none">
+                            <source src="/ai-chatbot.mp4" type="video/mp4" />
+                            Your browser does not support videos.
+                        </video>
+                    </div>
                 </>
             );
         }
