@@ -1,0 +1,33 @@
+.text-field {
+    position: relative;
+    margin: 10px 2.5px 20px 2.5px;
+}
+
+input {
+    display: inline-block;
+    color: white;
+    background-color: transparent;
+    border: thin solid #333333;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+
+label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s;
+    color: white;
+    background: transparent;
+}
+
+input:focus ~ label, input:valid ~ label {
+    top: -10px;
+    left: 15px;
+    font-size: small;
+    background: #333333;
+    border-radius: 5px;
+    padding:0 5px 0 5px;
+}

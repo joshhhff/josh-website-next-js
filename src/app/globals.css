@@ -2,20 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background: linear-gradient(to top right, #0a0a0a, #282727);
+    font-family: var(--font-geist-sans);
 }
+
+.nav-arrow {
+    color: #b2b2b2;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-arrow:hover {
+    color: white;
+}
+
+.nav-menu a {
+    color: #b2b2b2;
+    transition: 0.2s ease-in-out
+}
+
+.nav-menu a:hover {
+    color: white;
+}
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.custom-button {
+    transition: 0.2s ease-in-out;
+}
+
+.custom-button:hover {
+    scale: 1.1;
+}
+
+.custom-button:active {
+    scale: 0.9;
+}
+
+.project-card {
+    border: 1px solid #333333;
+}
+
+.arrow-link {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: #b2b2b2;
+    width: fit-content;
+    transition: 0.2s ease-in-out;
+}
+
+.arrow-link:hover {
+    color: white;
+}
+
+.arrow-link-arrow {
+    animation: linear infinite;
+    animation-name: moveArrow;
+    animation-duration: 2s;
+}
+
+.project-card {
+    background: linear-gradient(to top right, #0e0e0e, #2c2b2b);
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.slide-down {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(+30px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveArrow {
+    0% {
+      left: 0;
+    }
+    50% { 
+      left: calc(100% - 100px); 
+     }
+    100% {
+      left: 0;     
+    }
+  }
