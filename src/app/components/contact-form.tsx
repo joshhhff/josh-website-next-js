@@ -8,8 +8,8 @@ export default function ContactForm() {
     
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [product, setProduct] = useState("");
-    const [relatedCustomisation, setRelatedCustomisation] = useState("");
+    //const [product, setProduct] = useState("");
+    //const [relatedCustomisation, setRelatedCustomisation] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
@@ -21,8 +21,8 @@ export default function ContactForm() {
             email,
             subject,
             message,
-            product,
-            relatedCustomisation
+            //product,
+            //relatedCustomisation
         }
 
         const sendEmail = await fetch("/api/send-email", {
@@ -63,7 +63,7 @@ export default function ContactForm() {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} 
                 />
             </div>
-            <div className="name-inputs" style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-evenly' }}>
+            {/* <div className="name-inputs" style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-evenly' }}>
                 <select 
                     style={{ width: '48%', padding: '1rem', margin: '1rem', borderRadius: 5, border: '1px solid #333333', backgroundColor: 'transparent', WebkitAppearance: 'none' }} 
                     value={product} 
@@ -107,7 +107,7 @@ export default function ContactForm() {
                         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setMessage(e.target.value)}
                     ></select>
                 )}
-            </div>
+            </div> */}
             <input 
                 type="text" 
                 placeholder="Subject" 

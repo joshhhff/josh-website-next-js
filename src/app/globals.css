@@ -69,8 +69,13 @@ body {
     }
 
     .contact-form-details {
-        margin-top: 10px;
+        margin-top: 20px;
         width: 100% !important;
+    }
+
+    .contact-form-details .name-details .name-inputs input {
+        width: 50% !important;
+        margin-right: 0 !important;
     }
 }
 
