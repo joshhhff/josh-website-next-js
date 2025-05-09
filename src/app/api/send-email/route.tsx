@@ -27,7 +27,20 @@ export async function POST(request: Request) {
             ignoreTLS: true // add this 
         });
 
-        const sendEmail = await transporter.sendMail({
+        await new Promise((resolve, reject) => {
+            // verify connection configuration
+            transporter.verify(function (error, success) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                } else {
+                    console.log("Server is ready to take our messages");
+                    resolve(success);
+                }
+            });
+        });
+
+        const mailData = {
             from: process.env.GMAIL_EMAIL, // sender address
             to: process.env.GMAIL_EMAIL, // list of receivers
             subject: `NEW CONTACT FORM SUBMISSION`, // Subject line
@@ -56,6 +69,19 @@ export async function POST(request: Request) {
             <h2 style="margin-top: 20px;">Message:</h2>
             ${message.replace(/\n/g, '<br />')}
             `,
+        }
+
+        const sendEmail: any = await new Promise((resolve, reject) => {
+            // send mail
+            transporter.sendMail(mailData, (err, info) => {
+                if (err) {
+                    console.error(err);
+                    reject(err);
+                } else {
+                    console.log(info);
+                    resolve(info);
+                }
+            });
         });
 
         if (sendEmail.accepted.length > 0 && sendEmail.rejected.length === 0) {
