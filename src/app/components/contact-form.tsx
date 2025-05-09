@@ -43,7 +43,7 @@ export default function ContactForm() {
     }
 
     return (
-        <form onSubmit={submitContactForm} style={{ width: '60%', display: 'flex', flexDirection: 'column', borderRadius: '8px', background: 'transparent' }}>
+        <form className="contact-form-details" onSubmit={submitContactForm} style={{ width: '60%', display: 'flex', flexDirection: 'column', borderRadius: '8px', background: 'transparent' }}>
             <div className="name-details">
             <div className="name-inputs" style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-evenly' }}>
                 <input 
@@ -119,7 +119,7 @@ export default function ContactForm() {
             <textarea 
                 placeholder="Message" 
                 required={true}
-                style={{ width: '96%', padding: '1rem', margin: '1rem', borderRadius: 5, border: '1px solid #333333', backgroundColor: 'transparent', height: '150px', resize: 'none' }} 
+                style={{ width: '96%', padding: '1rem', margin: '1rem', borderRadius: 5, border: '1px solid #333333', backgroundColor: 'transparent', height: '200px', resize: 'none' }} 
                 value={message} 
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} 
             />

@@ -63,6 +63,15 @@ body {
         display: block;
         margin-left: auto;
     }
+
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-form-details {
+        margin-top: 10px;
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 890px) {
