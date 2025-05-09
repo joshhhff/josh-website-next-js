@@ -71,7 +71,7 @@ export async function POST(request: Request) {
             `,
         }
 
-        const sendEmail: any = await new Promise((resolve, reject) => {
+        const sendEmail = await new Promise<nodemailer.SentMessageInfo>((resolve, reject) => {
             // send mail
             transporter.sendMail(mailData, (err, info) => {
                 if (err) {
