@@ -43,6 +43,7 @@ export default function ContactForm() {
                 setError("There was an error sending your message. Please try again later.");
             }
         } catch (err) {
+            console.error("Error sending email:", err);
             setError("An unexpected error occurred. Please try again later.");
         }
     }

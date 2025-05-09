@@ -15,7 +15,7 @@ export const ProjectKeys = {
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>This customisation split Sales Order imported into NetSuite from Shopify if there were a mix of Pre-Order items and items which were in stock. This allowed for better order management, and allowed items which were in stock to be shipped completely before the Pre-Order items.</p>
                         <br/>
-                        <p style={{ color: '#b2b2b2' }}>The Child Orders would be related to the original imported Sales Order, which would become the Parent Order. The Parent Order would have a minimum of 2 Child Orders, the Pre-Order items and the in stock items. The Pre-Order items would also be split and grouped based on their Pre-Order date. All Child Orders would be visibile under a new custom subtab called "Child Orders" under the "Related Records" subtab of the Parent Order.</p>
+                        <p style={{ color: '#b2b2b2' }}>{`The Child Orders would be related to the original imported Sales Order, which would become the Parent Order. The Parent Order would have a minimum of 2 Child Orders, the Pre-Order items and the in stock items. The Pre-Order items would also be split and grouped based on their Pre-Order date. All Child Orders would be visibile under a new custom subtab called "Child Orders" under the "Related Records" subtab of the Parent Order.`}</p>
                         <br/>
                         <Image 
                             src={orderSplittingImage} 
