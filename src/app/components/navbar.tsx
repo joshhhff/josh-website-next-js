@@ -1,99 +1,90 @@
 'use client';
 import Link from "next/link";
 import NavLogo from "./nav-logo";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CgMenuRight, CgClose } from "react-icons/cg";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function Navbar() {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Set initial mobile state
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 700);
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMenuOpen(false);
+            }
         };
 
-        handleResize(); // Initial check
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isMenuOpen]);
 
     return (
-        <nav className="slide-down" style={{ width: "100%", position: "absolute", top: 0, zIndex: 1000 }}>
-            <div className="navbar" style={{ display: "flex", flexDirection: "row", margin: '2rem', fontWeight: 'bold', alignItems: "center" }}>
+        <nav className="slide-down navbar-container">
+            <div className="navbar">
                 <div className="nav-logo">
                     <NavLogo />
                 </div>
 
                 {/* Desktop menu */}
-                {!isMobile ? (
-                    <div className="nav-menu" style={{ marginLeft: "auto", display: "flex", flexDirection: "row", justifyContent: "space-between", width: "25rem" }}>
-                        <Link href="/projects">Projects</Link>
-                        <Link href="/products">Products</Link>
-                        <Link href="/about">About</Link>
-                        <Link href="/contact">Contact</Link>
-                    </div>
-                ) : (
-                    // Mobile menu toggle icon (menu or close)
-                    <div style={{ marginLeft: 'auto', position: 'relative' }}>
-                        {isMenuOpen ? (
-                            <CgClose 
-                                size={40}
-                                onClick={() => setIsMenuOpen(false)}
-                                style={{ cursor: "pointer" }}
-                            />
-                        ) : (
-                            <CgMenuRight 
-                                size={40}
-                                onClick={() => setIsMenuOpen(true)}
-                                style={{ cursor: "pointer" }}
-                            />
-                        )}
-                    </div>
-                )}
+                <div className="nav-menu desktop-nav">
+                    <Link href="/projects">Projects</Link>
+                    {/* <Link href="/products">Products</Link> */}
+                    <Link href="/about">About</Link>
+                    <Link href="/contact">Contact</Link>
+                </div>
+
+                {/* Mobile menu icon */}
+                <div className="mobile-menu-toggle mobile-nav">
+                    {isMenuOpen ? (
+                        <CgClose 
+                            size={40}
+                            onClick={() => setIsMenuOpen(false)}
+                            style={{ cursor: "pointer" }}
+                        />
+                    ) : (
+                        <CgMenuRight 
+                            size={40}
+                            onClick={() => setIsMenuOpen(true)}
+                            style={{ cursor: "pointer" }}
+                        />
+                    )}
+                </div>
             </div>
-            {/* Mobile menu items shown below the icon */}
+
+            {/* Mobile dropdown menu */}
             <AnimatePresence>
-            {isMobile && isMenuOpen && (
-                <motion.div 
-                    initial={{ x: "100%" }}
-                    animate={{ x: 0 }}
-                    exit={{ x: "100%" }}
-                    transition={{ duration: 0.1 }}
-                    style={{
-                        marginTop: "0.5rem",
-                        backgroundColor: "#333",
-                        padding: "1rem",
-                        width: '90%',
-                        borderRadius: "0.5rem",
-                        transform: isMenuOpen ? "translateX(0)" : "translateX(100%)",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-start", // Align text to the left
-                        position: "absolute",
-                        right: 0
-                    }}>
-                    <Link href="/projects" onClick={() => setIsMenuOpen(false)} style={{ ...mobileLinkStyle, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-                        <span>Projects</span>
-                        <IoIosArrowForward size={30} />
-                    </Link>
-                    <Link href="/products" onClick={() => setIsMenuOpen(false)} style={{ ...mobileLinkStyle, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-                        <span>Products</span>
-                        <IoIosArrowForward size={30} />
-                    </Link>
-                    <Link href="/about" onClick={() => setIsMenuOpen(false)} style={{ ...mobileLinkStyle, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-                        <span>About</span>
-                        <IoIosArrowForward size={30} />
-                    </Link>
-                    <Link href="/contact" onClick={() => setIsMenuOpen(false)} style={{ ...mobileLinkStyle, display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-                        <span>Contact</span>
-                        <IoIosArrowForward size={30} />
-                    </Link>
-                </motion.div>
-            )}
+                {isMenuOpen && (
+                    <motion.div 
+                        ref={menuRef}
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ duration: 0.1 }}
+                        className="mobile-dropdown"
+                    >
+                        <Link href="/projects" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
+                            <span>Projects</span>
+                            <IoIosArrowForward size={30} />
+                        </Link>
+                        {/* <Link href="/products" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>...</Link> */}
+                        <Link href="/about" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
+                            <span>About</span>
+                            <IoIosArrowForward size={30} />
+                        </Link>
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
+                            <span>Contact</span>
+                            <IoIosArrowForward size={30} />
+                        </Link>
+                    </motion.div>
+                )}
             </AnimatePresence>
         </nav>
     );
@@ -104,5 +95,9 @@ const mobileLinkStyle = {
     color: "#fff",
     textDecoration: "none",
     fontWeight: "bold",
-    fontSize: "1.75rem"
+    fontSize: "1.75rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%"
 };

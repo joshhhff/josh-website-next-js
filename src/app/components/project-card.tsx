@@ -1,5 +1,7 @@
+'use client';
 import { FaStar } from "react-icons/fa6";
 import ArrowLink from "./text-link-with-arrow";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
     title: string;
@@ -12,14 +14,72 @@ interface ProjectCardProps {
     linkText?: string;
     link?: string;
     slideIn?: boolean;
+    differentForMobile?: boolean;
+    topRated?: boolean;
+    slideInDirection?: 'left' | 'right' | 'up' | 'down';
 }
 
-export default function ProjectCard({title, rating, date, description, isProject, isNew, hasLink, linkText, link, slideIn}: ProjectCardProps) {
+export default function ProjectCard({title, rating, date, description, isProject, isNew, hasLink, linkText, link, slideIn, differentForMobile, topRated, slideInDirection}: ProjectCardProps) {
     hasLink = hasLink === undefined ? true : hasLink;    // default to true if it is not stated
-    slideIn = slideIn === undefined ? false : slideIn;    // default to false if it is not stated
+
+    const getSlideInAnimation = () => {
+        if (!slideIn) return { initial: {}, animate: {} };
+
+        if (slideIn && differentForMobile) {
+            const mobileDirections = {
+                left: { x: -50, y: 0 },
+                right: { x: 50, y: 0 },
+                up: { x: 0, y: -50 },
+                down: { x: 0, y: 50 },
+            };
+
+            let mobileDirection;
+
+            if (topRated) {
+                if (window.innerWidth < 768) {
+                    mobileDirection = mobileDirections.left;
+                } else {
+                    mobileDirection = mobileDirections.right;
+                }
+            } else {
+                if (window.innerWidth < 768) {
+                    mobileDirection = mobileDirections.left;
+                } else {
+                    mobileDirection = mobileDirections.down;
+                }
+            }
     
+            return {
+                initial: { opacity: 0, ...mobileDirection },
+                animate: { opacity: 1, x: 0, y: 0 },
+            };
+        } else {
+            const directions = {
+                left: { x: -50, y: 0 },
+                right: { x: 50, y: 0 },
+                up: { x: 0, y: -50 },
+                down: { x: 0, y: 50 },
+            };
+    
+            const direction = slideInDirection ? directions[slideInDirection] : { x: 0, y: 50 };
+    
+            return {
+                initial: { opacity: 0, ...direction },
+                animate: { opacity: 1, x: 0, y: 0 },
+            };
+        }
+    };
+
+    const animation = getSlideInAnimation();
+
     return (
-        <div className={slideIn ? "project-card slide-in" : "project-card"} style={{ padding: '16px', borderRadius: '8px', border: '1px solid #333333', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+        <motion.div 
+            initial={animation.initial}
+            whileInView={animation.animate}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="project-card" 
+            style={{ padding: '16px', borderRadius: '8px', border: '1px solid #333333', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                     <p style={{ fontSize: '1rem', color: '#b2b2b2', marginRight: '8px' }}>{date}</p>
@@ -38,6 +98,6 @@ export default function ProjectCard({title, rating, date, description, isProject
             <p style={{ marginTop: '8px', marginBottom: '8px', color: '#b2b2b2' }}>{description}</p>
 
             {hasLink && <ArrowLink text={linkText !== undefined ? linkText : 'More Details'} link={link !== undefined ? link : ''} colour="white" />}
-        </div>
+        </motion.div>
     )
 }

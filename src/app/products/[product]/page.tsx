@@ -2,21 +2,21 @@ import Utilities from '@/app/services/utilities';
 import * as Constants from '../../constants/constants';
 import Image from 'next/image';
 
-export default function Product({params}: {params: {product: string}}) {
+export default async function Product({params}: {params: Promise<{product: string}>}) {
     const productKeys = Constants.ProductKeys;
     const bannerImage = Utilities.getRandomBannerImage();
 
-    if (!productKeys.hasOwnProperty(params.product)) {
+    if (!productKeys.hasOwnProperty( (await params).product)) {
         return (
             <div className="page-container" style={{ height: '100vw', width: '100%', }}>
                 <div style={{ position: 'relative', textAlign: 'center', color: 'white', height: '50vh' }}>
-                    <h1>Product Not Found for {params.product}</h1>
+                    <h1>Product Not Found for {(await params).product}</h1>
                 </div>
             </div>
         );
     }
 
-    const product = Constants.ProductKeys[params.product as keyof typeof Constants.ProductKeys];
+    const product = Constants.ProductKeys[(await params).product as keyof typeof Constants.ProductKeys];
     const title = product.title;
     const price = product.price;
     const content = product.content();

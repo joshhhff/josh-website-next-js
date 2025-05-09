@@ -6,7 +6,85 @@ body {
     color: white;
     background: linear-gradient(to top right, #0a0a0a, #282727);
     font-family: var(--font-geist-sans);
+    overflow-x: hidden;
 }
+
+/* Layout container */
+.navbar-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Main navbar layout */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+/* Desktop nav links */
+.desktop-nav {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25rem;
+}
+
+/* Mobile nav toggle icon */
+.mobile-nav {
+    display: none;
+}
+
+/* Mobile dropdown */
+.mobile-dropdown {
+    margin-top: 0.5rem;
+    background-color: #333333;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Show/hide for mobile view */
+@media (max-width: 767px) {
+    .desktop-nav {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 890px) {
+    .skills-1 {
+        flex-direction: column;
+    }
+
+    .skills-1 .skill-cards {
+        justify-content: center !important;
+    }
+
+    .personal-project div {
+        flex-direction: column;
+    }
+
+    .personal-project div .tech-used {
+        justify-content: center !important;
+        width: 100% !important;
+        flex-direction: row !important;
+    }
+}
+
 
 .nav-arrow {
     color: #b2b2b2;
@@ -77,6 +155,62 @@ body {
 .slide-down {
     animation: slideDown 0.5s ease-out forwards;
 }
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.left-project, .right-projects {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Ensures the last card has spacing */
+.full-width-project {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.full-width-project .project-card {
+    width: 100%;
+    margin: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .left-project, .right-projects, .full-width-project {
+        width: 100%;
+    }
+
+    .more-projects {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .more-projects .column-1,
+    .more-projects .column-2,
+    .more-projects .column-3 {
+        width: 100% !important;
+    }
+}
+
 
 @keyframes slideIn {
     0% {

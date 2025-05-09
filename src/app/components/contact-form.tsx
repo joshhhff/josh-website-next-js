@@ -1,9 +1,7 @@
 'use client';
 import { useState } from "react";
 import Button from "./button";
-import InputField from "./input";
 import { useRouter } from "next/navigation";
-import LoadingSpinner from "./loading";
 
 export default function ContactForm() {
     const router = useRouter();

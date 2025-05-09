@@ -2,24 +2,24 @@ import Image from 'next/image';
 import * as Constants from '../../constants/constants';
 import Utilities from '@/app/services/utilities';
 
-export default function Project({params}: {params: {project: string}}) {
+export default async function Project({params}: {params: Promise<{project: string}>}) {
     const projectKeys = Constants.ProjectKeys;
     const bannerImage = Utilities.getRandomBannerImage();
 
-    if (!projectKeys.hasOwnProperty(params.project)) {
+    if (!projectKeys.hasOwnProperty((await params).project)) {
         return (
             <div className="page-container" style={{ height: '100vw', width: '100%', }}>
                 <div style={{ position: 'relative', textAlign: 'center', color: 'white', height: '50vh' }}>
                     <Image src={bannerImage} alt="Banner" layout="fill" objectFit="cover" />
                     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                        <h1>Project Not Found for {params.project}</h1>
+                        <h1>Project Not Found for {(await params).project}</h1>
                     </div>
                 </div>
             </div>
         );
     }
 
-    const project = Constants.ProjectKeys[params.project as keyof typeof Constants.ProjectKeys];
+    const project = Constants.ProjectKeys[(await params).project as keyof typeof Constants.ProjectKeys];
     const title = typeof project === 'string' ? project : project.title;
     const content = typeof project === 'string' ? null : project.content();
     const date = typeof project === 'string' ? '' : project.date;
