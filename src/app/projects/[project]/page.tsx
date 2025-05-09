@@ -30,7 +30,7 @@ export default async function Project({params}: {params: Promise<{project: strin
             <div style={{ position: 'relative', textAlign: 'center', color: 'white', height: '50vh' }}>
                 <Image src={bannerImage} alt="Banner" layout="fill" objectFit="cover" />
                 <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                    <h1 style={{ fontSize: 50, fontWeight: 'bold' }}>{title}</h1>
+                    <h1 style={{ fontSize: 35, fontWeight: 'bold' }}>{title}</h1>
                 </div>
             </div>
             <p style={{ marginLeft: '5vw', marginTop: '2vw', color: '#b2b2b2' }}>{date} - {timeSpent}</p>

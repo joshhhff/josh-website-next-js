@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
@@ -8,8 +9,8 @@ export default function Footer() {
                     <p>&copy; {new Date().getFullYear()} Josh Ford</p>
                 </div>
                 <div className="footer-right" style={{ display: "flex", flexDirection: "row", justifyContent: "center", gap: '1rem', marginBottom: '1rem' }}>
-                    <FaGithub size={30} style={{ color: 'white' }} />
-                    <FaLinkedin size={30} style={{ color: 'white' }} />
+                    <Link href="https://github.com/joshhhff" target="_blank"><FaGithub size={30} style={{ color: 'white' }} /></Link>
+                    <Link href="https://www.linkedin.com/in/josh-ford-1112a925b/" target="_blank"><FaLinkedin size={30} style={{ color: 'white' }} /></Link>
                 </div>
             </div>
         </div>

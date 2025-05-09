@@ -1,6 +1,50 @@
 //import ProjectCard from "../components/project-card";
+import Image from 'next/image';
+import orderSplittingImage from '../../../public/childOrders.png'
 
 export const ProjectKeys = {
+    orderSplitting: {
+        title: 'NetSuite x Shopify Order Splitting',
+        date: 'February 2025',
+        timeSpent: '1 month + User Acceptance Testing',
+        content: () => {
+            return (
+                <>
+                   <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Project Summary</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>This customisation split Sales Order imported into NetSuite from Shopify if there were a mix of Pre-Order items and items which were in stock. This allowed for better order management, and allowed items which were in stock to be shipped completely before the Pre-Order items.</p>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>The Child Orders would be related to the original imported Sales Order, which would become the Parent Order. The Parent Order would have a minimum of 2 Child Orders, the Pre-Order items and the in stock items. The Pre-Order items would also be split and grouped based on their Pre-Order date. All Child Orders would be visibile under a new custom subtab called "Child Orders" under the "Related Records" subtab of the Parent Order.</p>
+                        <br/>
+                        <Image 
+                            src={orderSplittingImage} 
+                            alt="Order Splitting" 
+                            width={800} 
+                            height={400} 
+                            style={{ 
+                                borderRadius: 5, 
+                                maxWidth: '100%', 
+                                height: 'auto' 
+                            }} 
+                        />
+                        <br/>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Project Components</h1>
+                        <br/>
+                        <ul style={{ color: '#b2b2b2'}}>
+                            <li>User Event Script - Script to mark incoming Sales Order for splitting (due to a delay in the Customer Deposit coming into NetSuite, the splitting could not be done in this script)</li>
+                            <li>Map Reduce Script - Script which would split the Sales Order into separate Child Orders</li>
+                            <li>Map Reduce Script - Script which would approve the Pre-Order Child Orders to be fulfillable with 3PL Partner</li>
+                            <li>Saved Search - Saved Search for all Sales Orders pending splitting process</li>
+                            <li>Saved Search - Saved Search for all Child Orders which relate to the Parent Order</li>
+                            <li>Custom Fields - Numerous custom fields which would contribute to the functionality</li>
+                        </ul>
+
+                    </div>
+                </>
+            )
+        }
+    },
     pick2Ship: {
         title: 'Pick2Ship - WMS',
         date: 'June 2024',
@@ -23,10 +67,6 @@ export const ProjectKeys = {
                             <li>PrintNode Integration - Printing of Shipping Labels to Label Printers</li>
                             <li>Employee Preferred Printers - Allowing Warehouse Operators to set their preferred printers on their Employee record in NetSuite to automatically select and print to their printers on their workstations</li>
                         </ul>
-                        <br/>
-                        <h1 style={{ fontSize: 25, textAlign: 'center', fontWeight: 'bold' }}>Related Projects</h1>
-                        <br/>
-
                     </div>
                 </>
             );

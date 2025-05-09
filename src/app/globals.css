@@ -71,11 +71,25 @@ body {
     .contact-form-details {
         margin-top: 20px;
         width: 100% !important;
+        justify-content: center !important;
+        margin-left: 0 !important;
+        
+    }
+
+    .contact-form-details .name-details .name-inputs {
+        justify-content: space-between !important;
     }
 
     .contact-form-details .name-details .name-inputs input {
-        width: 50% !important;
+        width: 49% !important;
+        margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    .contact-form-details .name-details input, textarea, .submit-button {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
     }
 }
 

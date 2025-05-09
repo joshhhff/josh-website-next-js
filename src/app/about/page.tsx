@@ -13,7 +13,7 @@ import dotNetLogo from '../../../public/dotNetLogo.png'
 import awsLogo from '../../../public/awsLogo.png'
 import firebaseLogo from '../../../public/firebaseLogo.png'
 import pythonLogo from '../../../public/pythonLogo.png'
-import SkillsCard from "../api/skills";
+import SkillsCard from "../components/skills";
 import Link from 'next/link'
 import Button from '../components/button'
 import Footer from '../components/footer'

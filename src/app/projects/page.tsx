@@ -33,7 +33,7 @@ export default function Projects() {
                             </>
                         }
                         isProject={true}
-                        link='projects/pick2Ship'
+                        link='projects/orderSplitting'
                     />
                 </div>
                 <div className="right-projects">
@@ -66,7 +66,7 @@ export default function Projects() {
                     date="June 2024"
                     description='A large addtion to standard NetSuite WMS which allowed warehouse operators to skip the packing process in Ship Central and ship directly after picking in WMS. Warehouse operators could choose to ship once they have selected their Staging Bin, from there select number of boxes, pack items into boxes, and then presented with shipping details before progressing further.'
                     isProject={true}
-                    link=''
+                    link='projects/pick2Ship'
                     slideIn={true}
                     slideInDirection='left'
                 />
