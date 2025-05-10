@@ -17,10 +17,12 @@ import SkillsCard from "../components/skills";
 import Link from 'next/link'
 import Button from '../components/button'
 import Footer from '../components/footer'
+import ScrollTo from '../components/scroll-to'
 
-export default function About() {
+export default async function About({ searchParams }: { searchParams?: Promise<{ scrollTo?: string }> }) {
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
+            {(await searchParams)?.scrollTo && <ScrollTo id={(await searchParams)?.scrollTo as string} />}
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
                 <h1 style={{ fontSize: 50, fontWeight: 'bold' }}>About Me</h1>
             </div>
@@ -37,7 +39,7 @@ export default function About() {
 
             <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
-            <h2 style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>{"Technologies & Frameworks"}</h2>
+            <h2 id='technologies' style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>{"Technologies & Frameworks"}</h2>
             <div className="skills-1" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1, marginTop: '1rem' }}>
                     <p>
@@ -60,7 +62,7 @@ export default function About() {
 
             <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
-            <h2 style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>Languages</h2>
+            <h2 id='languages' style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>Languages</h2>
             <div className="skills-1" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div style={{ flex: 1, marginTop: '1rem' }}>
                     <p>
@@ -83,7 +85,7 @@ export default function About() {
 
             <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
-            <h2 style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>Personal Projects</h2>
+            <h2 id='personalProjects' style={{ fontSize: 30, fontWeight: 'bold', marginTop: '2rem' }}>Personal Projects</h2>
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"NetSuite AI Chatbot"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>

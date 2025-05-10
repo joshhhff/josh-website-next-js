@@ -54,6 +54,18 @@ body {
     align-items: flex-start;
 }
 
+.footer a:hover {
+    color: grey !important;
+}
+
+.footer-image:hover {
+    filter: brightness(0.5);
+}
+
+.footer-icons a svg:hover {
+    color: grey !important;
+}
+
 /* Show/hide for mobile view */
 @media (max-width: 767px) {
     .desktop-nav {
@@ -98,6 +110,21 @@ body {
 
     .skills-card p {
         font-size: 0.7rem !important;
+    }
+
+    .footer-content {
+        flex-direction: column !important;
+        align-items: start !important;
+        gap: 2rem !important;
+    }
+
+    .footer-left {
+        flex-direction: column !important;
+    }
+
+    .footer-image {
+        margin-left: 0 !important;
+        margin: auto !important;
     }
 }
 
