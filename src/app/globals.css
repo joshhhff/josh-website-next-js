@@ -91,6 +91,14 @@ body {
         margin-right: 0 !important;
         width: 100% !important;
     }
+
+    .skills-card {
+        width: 40% !important;
+    }
+
+    .skills-card p {
+        font-size: 0.7rem !important;
+    }
 }
 
 @media (max-width: 890px) {
