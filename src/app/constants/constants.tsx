@@ -147,3 +147,48 @@ export const ProductKeys = {
         }
     }
 }
+
+export const PersonalProjectsKeys = {
+    aiChatbot: {
+        title: 'NetSuite AI Chatbot',
+        date: 'Coming Soon...',
+        content: () => {
+            return (
+                <>
+                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Product Information</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>A custom AI chatbot integrated within NetSuite. Ask general queries, or ask about specific transactions within your NetSuite instance. This AI Chatbot allows users to ask about transactions, query employee information, or even query about inventory information for all or specific locations.</p>
+                        <br/>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
+                        <video width="100%" height="auto" controls preload="none">
+                            <source src="/ai-chatbot.mp4" type="video/mp4" />
+                            Your browser does not support videos.
+                        </video>
+                    </div>
+                </>
+            );
+        }
+    },
+    fitDiary: {
+        title: 'FitDiary - Mobile App',
+        date: 'In Progress',
+        content: () => {
+            return (
+                <>
+                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Information</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>FitDiary is a mobile application that I am developing for both iOS &amp; Android. I have chosen Flutter as the framework for this app, as it allows for creating applications from a single codebase. I have also linked this with Firebase, which is a BaaS (Backend as a Service) which was developed by Google.</p>
+                        <br/>
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
+                        <video width="100%" height="auto" controls preload="none">
+                            <source src="/FitDiary sign up process.mp4" type="video/mp4" />
+                            Your browser does not support videos.
+                        </video>
+                    </div>
+                </>
+            );
+        }
+    }
+}

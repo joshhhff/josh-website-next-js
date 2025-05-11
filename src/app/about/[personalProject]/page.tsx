@@ -3,28 +3,29 @@ import * as Constants from '../../constants/constants';
 import Utilities from '@/app/services/utilities';
 //import Footer from '@/app/components/footer';
 
-export default async function Project({params}: {params: Promise<{project: string}>}) {
-    const projectKeys = Constants.ProjectKeys;
+export default async function PersonalProject({params}: {params: Promise<{personalProject: string}>}) {
+    const projectKeys = Constants.PersonalProjectsKeys;
     const bannerImage = Utilities.getRandomBannerImage();
 
-    if (!projectKeys.hasOwnProperty((await params).project)) {
+    console.log('Project:', (await params).personalProject);
+
+    if (!projectKeys.hasOwnProperty((await params).personalProject)) {
         return (
             <div className="page-container" style={{ height: '100vw', width: '100%', }}>
                 <div style={{ position: 'relative', textAlign: 'center', color: 'white', height: '50vh' }}>
                     <Image src={bannerImage} alt="Banner" layout="fill" objectFit="cover" />
                     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                        <h1>Project Not Found for {(await params).project}</h1>
+                        <h1>Project Not Found for {(await params).personalProject}</h1>
                     </div>
                 </div>
             </div>
         );
     }
 
-    const project = Constants.ProjectKeys[(await params).project as keyof typeof Constants.ProjectKeys];
+    const project = Constants.PersonalProjectsKeys[(await params).personalProject as keyof typeof Constants.PersonalProjectsKeys];
     const title = typeof project === 'string' ? project : project.title;
-    const content = typeof project === 'string' ? null : project.content();
     const date = typeof project === 'string' ? '' : project.date;
-    const timeSpent = typeof project === 'string' ? '' : project.timeSpent;
+    const content = typeof project === 'string' ? null : project.content();
 
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', backgroundColor: 'transparent' }}>
@@ -34,12 +35,10 @@ export default async function Project({params}: {params: Promise<{project: strin
                     <h1 style={{ fontSize: 35, fontWeight: 'bold' }}>{title}</h1>
                 </div>
             </div>
-            <p style={{ marginLeft: '5vw', marginTop: '2vw', color: '#b2b2b2' }}>{date} - {timeSpent}</p>
+            <p style={{ marginLeft: '5vw', marginTop: '2vw', color: '#b2b2b2' }}>{date}</p>
             {/* Load content related to project that is being viewed */}
             {content}
-            {/* <div style={{ paddingLeft: '5rem', paddingRight: '5rem' }}>
-                <Footer />
-            </div> */}
+           {/*  <Footer /> */}
         </div>
     );
 }
