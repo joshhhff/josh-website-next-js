@@ -24,7 +24,7 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
             {(await searchParams)?.scrollTo && <ScrollTo id={(await searchParams)?.scrollTo as string} />}
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
-                <h1 style={{ fontSize: 50, fontWeight: 'bold' }}>About Me</h1>
+                <h1 style={{ fontSize: 50, fontWeight: 'bold' }}>About Me TEST</h1>
             </div>
 
             <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
