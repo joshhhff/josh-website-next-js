@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import * as Constants from '../../constants/constants';
 import Utilities from '@/app/services/utilities';
+//import Footer from '@/app/components/footer';
 
 export default async function Project({params}: {params: Promise<{project: string}>}) {
     const projectKeys = Constants.ProjectKeys;
@@ -36,6 +37,9 @@ export default async function Project({params}: {params: Promise<{project: strin
             <p style={{ marginLeft: '5vw', marginTop: '2vw', color: '#b2b2b2' }}>{date} - {timeSpent}</p>
             {/* Load content related to project that is being viewed */}
             {content}
+            {/* <div style={{ paddingLeft: '5rem', paddingRight: '5rem' }}>
+                <Footer />
+            </div> */}
         </div>
     );
 }

@@ -89,12 +89,12 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"NetSuite AI Chatbot"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
-                    <div style={{ flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
                         <p style={{ fontSize: 16, lineHeight: '1.8' }}>
                             {`An AI Chatbot which integrates seamlessly with NetSuite. Utilising NetSuite's LLM modules, and integrating with NetSuite's Query module for SuiteQL, this chatbot can answer generic questions or even specific questions about the data within the NetSuite instance.`}
                             <br/><br/>
                         </p>
-                        <Link href="/products/aiChatbot">
+                        <Link href="/about/aiChatbot" style={{ marginBottom: '1rem' }}>
                             <Button text="More Details" buttonColour="white" textColour="black" borderRadius={5} />
                         </Link>
                     </div>
@@ -110,14 +110,14 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"FitDiary"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
-                    <div style={{ flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
                         <p style={{ fontSize: 16, lineHeight: '1.8' }}>
                             {`FitDiary is a fitness tracker app which I will eventually release on Android & iOS. The app allows users to track their workouts, set goals, and monitor their progress over time.`}
                             <br/><br/>
                         </p>
-                        {/* <Link href="">
+                        <Link href="/about/fitDiary" style={{ marginBottom: '1rem' }}>
                             <Button text="More Details" buttonColour="white" textColour="black" borderRadius={5} />
-                        </Link> */}
+                        </Link>
                     </div>
                     <div className="tech-used" style={{ flex: 1, display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'flex-start' }}>
                         <SkillsCard image={flutterLogo} text="Flutter" />
@@ -129,7 +129,7 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"CloudOps"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
-                    <div style={{ flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
                         <p style={{ fontSize: 16, lineHeight: '1.8' }}>
                             {`CloudOps is a web application which allows users to manage their sales, purchases, and inventory. Tailored towards smaller businesses who may not have the resources to invest in expensive software.`}
                             <br/><br/>
