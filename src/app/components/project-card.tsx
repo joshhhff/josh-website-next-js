@@ -24,7 +24,7 @@ export default function ProjectCard({title, rating, date, description, isProject
 
     const getSlideInAnimation = () => {
         if (!slideIn) return { initial: {}, animate: {} };
-
+    
         if (slideIn && differentForMobile) {
             const mobileDirections = {
                 left: { x: -50, y: 0 },
@@ -32,17 +32,17 @@ export default function ProjectCard({title, rating, date, description, isProject
                 up: { x: 0, y: -50 },
                 down: { x: 0, y: 50 },
             };
-
+    
             let mobileDirection;
-
+    
             if (topRated) {
-                if (window.innerWidth < 768) {
+                if (typeof window !== 'undefined' && window.innerWidth < 768) {
                     mobileDirection = mobileDirections.left;
                 } else {
                     mobileDirection = mobileDirections.right;
                 }
             } else {
-                if (window.innerWidth < 768) {
+                if (typeof window !== 'undefined' && window.innerWidth < 768) {
                     mobileDirection = mobileDirections.left;
                 } else {
                     mobileDirection = mobileDirections.down;
@@ -69,7 +69,7 @@ export default function ProjectCard({title, rating, date, description, isProject
             };
         }
     };
-
+    
     const animation = getSlideInAnimation();
 
     return (

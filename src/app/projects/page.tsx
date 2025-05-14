@@ -3,19 +3,20 @@ import ProjectCard from "../components/project-card"
 //import ArrowLink from "../components/text-link-with-arrow"
 //import Utilities from "../services/utilities"
 import Footer from "../components/footer";
+import AnimatedText from "../components/animated-text";
 
 // prevent pre-rendering of this page
-export const dynamic = 'force-dynamic'
+//export const dynamic = 'force-dynamic'
 
 export default function Projects() {
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
-                <h1 style={{ fontSize: 50, fontWeight: 'bold' }}>Projects</h1>
-                <h2 style={{ fontSize: 20, color: '#b2b2b2' }}>Get an idea of some of the projects that I have deployed to different NetSuite accounts</h2>
+                <AnimatedText as='h1' style={{ fontSize: 50, fontWeight: 'bold' }}>Projects</AnimatedText>
+                <AnimatedText as='h2' style={{ fontSize: 20, color: '#b2b2b2' }}>Get an idea of some of the projects that I have deployed to different NetSuite accounts</AnimatedText>
             </div>
-            <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
-            <h2 className="section-title">Top Rated Projects</h2>
+            <AnimatedText as='div'><hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} /></AnimatedText>
+            <AnimatedText as='h2' className='section-title'>Top Rated Projects</AnimatedText>
             <div className="project-container">
                 <div className="left-project">
                     <ProjectCard 
@@ -74,8 +75,8 @@ export default function Projects() {
 
             {/* <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
             <ProductsBanner /> */}
-            <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
-            <h2 style={{ fontSize: 25, marginBottom: '1rem', fontWeight: 'bold' }}>{"And that's not it!"}</h2>
+            <AnimatedText as='div'><hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} /></AnimatedText>
+            <AnimatedText as='h2' className='section-title'>{`And that's not it!`}</AnimatedText>
             <div className="more-projects" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '2rem' }}>
                 <div className="column-1" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '33%' }}>
                     <ProjectCard 

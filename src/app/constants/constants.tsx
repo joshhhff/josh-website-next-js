@@ -4,6 +4,7 @@ import orderSplittingImage from '../../../public/childOrders.png'
 
 export const ProjectKeys = {
     orderSplitting: {
+        lastModified: '2025-05-12',
         title: 'NetSuite x Shopify Order Splitting',
         date: 'February 2025',
         timeSpent: '1 month + User Acceptance Testing',
@@ -46,6 +47,7 @@ export const ProjectKeys = {
         }
     },
     pick2Ship: {
+        lastModified: '2025-05-09',
         title: 'Pick2Ship - WMS',
         date: 'June 2024',
         timeSpent: '3 months + User Acceptance Testing',
@@ -73,6 +75,7 @@ export const ProjectKeys = {
         }
     },
     trustpilotIntegration: {
+        lastModified: '2025-05-09',
         title: 'NetSuite x TrustPilot Integration',
         date: 'January 2025',
         timeSpent: '40 hours + User Acceptance Testing',
@@ -99,6 +102,7 @@ export const ProjectKeys = {
         }
     },
     ediShipNotice: {
+        lastModified: '2025-05-09',
         title: 'Auto-ASN Generation',
         date: 'October 2024',
         timeSpent: '1 month + User Acceptance Testing',
@@ -126,6 +130,7 @@ export const ProjectKeys = {
 
 export const ProductKeys = {
     aiChatbot: {
+        lastModified: '2025-05-11',
         title: 'NetSuite AI Chatbot',
         price: 'Coming Soon...',
         content: () => {
@@ -150,6 +155,7 @@ export const ProductKeys = {
 
 export const PersonalProjectsKeys = {
     aiChatbot: {
+        lastModified: '2025-05-11',
         title: 'NetSuite AI Chatbot',
         date: 'Coming Soon...',
         content: () => {
@@ -171,6 +177,7 @@ export const PersonalProjectsKeys = {
         }
     },
     fitDiary: {
+        lastModified: '2025-05-11',
         title: 'FitDiary - Mobile App',
         date: 'In Progress',
         content: () => {
