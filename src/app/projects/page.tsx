@@ -5,9 +5,6 @@ import ProjectCard from "../components/project-card"
 import Footer from "../components/footer";
 import AnimatedText from "../components/animated-text";
 
-// prevent pre-rendering of this page
-//export const dynamic = 'force-dynamic'
-
 export default function Projects() {
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
