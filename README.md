@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Josh Ford's Portfolio Site
+
+Welcome to my portfolio site! This project is built using **Next.js**, a powerful React framework for building fast and scalable web applications. The site showcases my work, skills, and projects, and is deployed seamlessly on **Vercel**.
+
+---
+
+## Features
+
+- **Modern Design**: A clean and responsive layout optimized for all devices.
+- **Next.js Framework**: Utilizes server-side rendering (SSR) and static site generation (SSG) for optimal performance.
+- **Fast Deployment**: Hosted on Vercel for reliable and fast delivery.
+- **Portfolio Showcase**: Displays my projects, skills, and professional experience.
+- **SEO Optimized**: Includes meta tags and structured data for better search engine visibility.
+
+---
+
+## Technologies Used
+
+- **Next.js**: React framework for building web applications.
+- **React**: Component-based UI library.
+- **CSS Modules**: Scoped and modular styling.
+- **Vercel**: Deployment platform for modern web applications.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (v16 or higher)
+- npm or yarn
 
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/joshford/josh-website-next-js.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd josh-website-next-js
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+### Running Locally
+Start the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the site.
+
+---
+
+## Deployment
+
+Validate that the code is Production ready. Run the below:
+```bash
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If this doesn't throw any errors, go ahead and publish to the `preview` branch to automatically update the Pre-Production domain in **Vercel**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Once validating everything in Pre-Production, create a pull request to merge the changes from `preview` into `main`. This will automatically update the Production domain in **Vercel**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Production: [https://www.joshford.co.uk](https://www.joshford.co.uk)
+Pre-Production: [josh-website-next-js.vercel.app](josh-website-next-js.vercel.app)
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
+Feel free to reach out to me for any inquiries or collaboration opportunities:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Email**: [joshfordd2004@gmail.com](mailto:joshfordd2004@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/josh-ford-1112a925b/](https://www.linkedin.com/in/josh-ford-1112a925b/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thank you for visiting my portfolio site!
