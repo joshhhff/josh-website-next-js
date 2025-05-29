@@ -15,7 +15,7 @@ export async function POST(request: Request) {
         const body = await request.json();
         const { apiKey, name, email, subject, message } = body;
         
-        if (!apiKey || apiKey !== process.env.NEXT_PUBLIC_EMAIL_API_KEY) {
+        if (!apiKey || apiKey !== process.env.CUSTOM_EMAIL_API_KEY) {
             return NextResponse.json({ error: "Invalid API key" }, { status: 401 });
         } else {
             console.log("API key is valid");

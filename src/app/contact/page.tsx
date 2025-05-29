@@ -67,6 +67,8 @@ export default function ContactMe() {
         fontWeight: "bold",
       };
 
+      const apiKeyForEmail = process.env.CUSTOM_EMAIL_API_KEY || '';
+
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
@@ -97,7 +99,7 @@ export default function ContactMe() {
                         </ul>
                     </div>
                 </div>
-                <ContactForm />
+                <ContactForm apiKey={apiKeyForEmail} />
             </div>
             <section style={containerStyle}>
                 {steps.map((step, index) => (

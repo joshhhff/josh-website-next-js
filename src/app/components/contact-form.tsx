@@ -3,7 +3,12 @@ import { useState } from "react";
 import Button from "./button";
 import { useRouter } from "next/navigation";
 
-export default function ContactForm() {
+interface ContactFormProps {
+    apiKey: string;
+}
+
+export default function ContactForm(props: ContactFormProps) {
+    console.log("ContactForm component rendered with API key:", props.apiKey);
     const router = useRouter();
     
     const [name, setName] = useState("");
@@ -19,7 +24,7 @@ export default function ContactForm() {
         setError(""); // Clear any previous errors
 
         const formData = {
-            apiKey: process.env.NEXT_PUBLIC_EMAIL_API_KEY,
+            apiKey: props.apiKey,
             name,
             email,
             subject,
@@ -41,7 +46,7 @@ export default function ContactForm() {
                 router.push("/contact/success");
             } else {
                 setLoading(false); // Set loading to false
-                setError("There was an error sending your message. Please try again later.");
+                setError(response.error || "Failed to send email. Please try again later.");
             }
         } catch (err) {
             console.error("Error sending email:", err);
