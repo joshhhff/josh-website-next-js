@@ -39,7 +39,7 @@ export default async function PersonalProject({params}: {params: Promise<{person
             {/* Load content related to project that is being viewed */}
             {content}
            {/*  <Footer /> */}
-            <div style={{ paddingLeft: '4.5rem', paddingRight: '4.5rem' }}>
+            <div className='projects-footer-container' style={{ paddingLeft: '4.5rem', paddingRight: '4.5rem' }}>
                 <Footer />
             </div>
         </div>
