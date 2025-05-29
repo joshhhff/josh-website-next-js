@@ -19,17 +19,18 @@ export default function ContactForm() {
         setError(""); // Clear any previous errors
 
         const formData = {
+            apiKey: process.env.NEXT_PUBLIC_EMAIL_API_KEY,
             name,
             email,
             subject,
             message,
-        };
+        }
 
         try {
             const sendEmail = await fetch("/api/send-email", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData),
             });

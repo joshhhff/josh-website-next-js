@@ -127,11 +127,11 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
                 </div>
             </div>
             <div className="personal-project">
-                <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"CloudOps"}</h3>
+                <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"This website!"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
                         <p style={{ fontSize: 16, lineHeight: '1.8' }}>
-                            {`CloudOps is a web application which allows users to manage their sales, purchases, and inventory. Tailored towards smaller businesses who may not have the resources to invest in expensive software.`}
+                            {`This website is built using Next.js and TypeScript! This serves as a portfolio for my projects, skills, experience and personal projects.`}
                             <br/><br/>
                         </p>
                         {/* <Link href="">
@@ -142,9 +142,6 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
                         <SkillsCard image={reactLogo} text="React.js" />
                         <SkillsCard image={nextLogo} text="Next.js" applyBorderRadius={false} />
                         <SkillsCard image={typescriptLogo} text="TypeScript" />
-                        <SkillsCard image={awsLogo} text="Amazon Web Services" />
-                        <SkillsCard image={htmlLogo} text="HTML" />
-                        <SkillsCard image={cssLogo} text="CSS" />
                     </div>
                 </div>
             </div>

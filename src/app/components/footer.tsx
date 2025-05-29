@@ -24,40 +24,42 @@ export default function Footer() {
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "flex-start",
-                        gap: "2rem",
+                        gap: "4rem", // more spacing between columns
                     }}
-                >
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Link href="/projects" style={{ fontWeight: 'bold', fontSize: 25 }}>Projects</Link>
+                    >
+                    {/* Projects Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', minWidth: '200px' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '25px' }}>Projects</span>
                         <Link href="/projects/orderSplitting" style={{ fontSize: 16 }}>NetSuite x Shopify Order Splitting</Link>
                         <Link href="/projects/trustpilotIntegration" style={{ fontSize: 16 }}>NetSuite x Trustpilot Integration</Link>
                         <Link href="/projects/ediShipNotice" style={{ fontSize: 16 }}>Auto-ASN Generation</Link>
                         <Link href="/projects/pick2Ship" style={{ fontSize: 16 }}>Pick2Ship</Link>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Link href="/about" style={{ fontWeight: 'bold', fontSize: 25 }}>About Me</Link>
+
+                    {/* About Me Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', minWidth: '200px' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '25px' }}>About Me</span>
                         <Link href="/about?scrollTo=technologies" style={{ fontSize: 16 }}>Technologies &amp; Frameworks</Link>
                         <Link href="/about?scrollTo=languages" style={{ fontSize: 16 }}>Languages</Link>
                         <Link href="/about?scrollTo=personalProjects" style={{ fontSize: 16 }}>Personal Projects</Link>
                     </div>
-                    <div>
-                        <Link href="/contact" style={{ fontWeight: 'bold', fontSize: 30 }}>Contact</Link>
-                        <div style={{ display: "flex", flexDirection: 'column', gap: "0.5rem", marginTop: "0.25rem" }}>
-                            <Link href="mailto:joshfordd2004@gmail.com" target="_blank" rel="noopener noreferrer">
-                                joshfordd2004@gmail.com
-                            </Link>
-                            <div className='footer-icons' style={{ display: 'flex', gap: '1rem' }}>
-                                <Link href="https://github.com/joshhhff" target="_blank" rel="noopener noreferrer">
-                                    <FaGithub size={40} style={{ color: 'white' }} />
-                                </Link>
-                                <Link href="https://www.linkedin.com/in/josh-ford-1112a925b/" target="_blank" rel="noopener noreferrer">
-                                    <FaLinkedin size={40} style={{ color: 'white' }} />
-                                </Link>
-                            </div>
+
+                    {/* Contact Column */}
+                    <div style={{ display: 'flex', flexDirection: 'column', minWidth: '200px' }}>
+                        <span style={{ fontWeight: 'bold', fontSize: '25px' }}>Contact</span>
+                        <Link href="mailto:joshfordd2004@gmail.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: 16 }}>
+                        joshfordd2004@gmail.com
+                        </Link>
+                        <div className='footer-icons' style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+                        <Link href="https://github.com/joshhhff" target="_blank" rel="noopener noreferrer">
+                            <FaGithub size={30} style={{ color: 'white' }} />
+                        </Link>
+                        <Link href="https://www.linkedin.com/in/josh-ford-1112a925b/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin size={30} style={{ color: 'white' }} />
+                        </Link>
                         </div>
                     </div>
                 </div>
-
                 {/* Right Section: Image */}
                 <div className="footer-image" style={{ marginLeft: 'auto' }}>
                     <Link href='/'>
