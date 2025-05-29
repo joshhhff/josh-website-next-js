@@ -54,6 +54,10 @@ body {
     align-items: flex-start;
 }
 
+.footer a {
+    width: fit-content;
+}
+
 .footer a:hover {
     color: grey !important;
 }
@@ -64,6 +68,10 @@ body {
 
 .footer-icons a svg:hover {
     color: grey !important;
+}
+
+.contact-social-link:hover {
+    filter: brightness(0.7);
 }
 
 /* Show/hide for mobile view */

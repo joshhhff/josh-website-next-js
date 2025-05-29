@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { DiGitBranch } from "react-icons/di";
 import { FaRegCommentDots } from "react-icons/fa";
 import Footer from "../components/footer";
+import Link from "next/link";
 
 export default function ContactMe() {
     const steps = [
@@ -66,6 +67,8 @@ export default function ContactMe() {
         fontWeight: "bold",
       };
 
+      const apiKeyForEmail = process.env.CUSTOM_EMAIL_API_KEY || '';
+
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
@@ -81,22 +84,22 @@ export default function ContactMe() {
                     <div style={{ marginTop: '1.5rem' }}>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Follow Me</h3>
                         <ul style={{ listStyleType: 'none', padding: 0, marginTop: '1rem' }}>
-                            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center' }}>
+                            <li className='contact-social-link' style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', width: 'fit-content' }}>
+                                <Link href="https://www.linkedin.com/in/josh-ford-1112a925b/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
                                 <FaLinkedin size={30} style={{ color: 'white', marginRight: '1rem' }} />
-                                <a href="https://www.linkedin.com/in/josh-ford-1112a925b/" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
                                     LinkedIn
-                                </a>
+                                </Link>
                             </li>
-                            <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
+                            <li className='contact-social-link' style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', marginTop: '1rem', width: 'fit-content' }}>
+                                <Link href="https://github.com/joshhhff" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
                                 <FaGithub size={30} style={{ color: 'white', marginRight: '1rem' }} />
-                                <a href="https://github.com/joshhhff" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
                                     GitHub
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <ContactForm />
+                <ContactForm apiKey={apiKeyForEmail} />
             </div>
             <section style={containerStyle}>
                 {steps.map((step, index) => (
