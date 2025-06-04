@@ -13,6 +13,7 @@ import dotNetLogo from '../../../public/dotNetLogo.png'
 import awsLogo from '../../../public/awsLogo.png'
 import firebaseLogo from '../../../public/firebaseLogo.png'
 import pythonLogo from '../../../public/pythonLogo.png'
+import vscodeLogo from '../../../public/vscode-logo.png'
 import SkillsCard from "../components/skills";
 import Link from 'next/link'
 import Button from '../components/button'
@@ -107,6 +108,29 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
                 </div>
             </div>
 
+            <hr style={{ backgroundColor: '#333333', borderTop: '1px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+
+            <div className="personal-project">
+                <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"NetSuite SDF - Visual Studio Code Extensions"}</h3>
+                <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
+                        <p style={{ fontSize: 16, lineHeight: '1.8' }}>
+                            {`Recently, I have created a Visual Studio Code extension which allows users to quickly create folders under the src/Objects directory of NetSuite SDF projects. This allows developers to easily group and manage their custom objects.`}
+                            <br/><br/>
+                        </p>
+                        <Link href="/about/sdfVscodeExtension" style={{ marginBottom: '1rem' }}>
+                            <Button text="More Details" buttonColour="white" textColour="black" borderRadius={5} />
+                        </Link>
+                    </div>
+                    <div className="tech-used" style={{ flex: 1, display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'flex-start' }}>
+                        <SkillsCard image={typescriptLogo} text="TypeScript" />
+                        <SkillsCard image={vscodeLogo} text="Visual Studio Code" />
+                    </div>
+                </div>
+            </div>
+
+            <hr style={{ backgroundColor: '#333333', borderTop: '1px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"FitDiary"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
@@ -126,6 +150,9 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
                     </div>
                 </div>
             </div>
+
+            <hr style={{ backgroundColor: '#333333', borderTop: '1px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+
             <div className="personal-project">
                 <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"This website!"}</h3>
                 <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
