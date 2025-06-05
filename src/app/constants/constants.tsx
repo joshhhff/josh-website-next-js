@@ -179,7 +179,7 @@ export const PersonalProjectsKeys = {
     sdfVscodeExtension: {
         lastModified: '2025-06-04',
         title: 'NetSuite SDF Object Organiser',
-        date: 'Last Update: 4 June 2025',
+        date: 'Released: 4 June 2025',
         content: () => {
             return (
                 <>
@@ -187,6 +187,19 @@ export const PersonalProjectsKeys = {
                         <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Information</h1>
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>NetSuite SDF Object Organiser is a Visual Studio Code extension that helps you organise custom objects in your NetSuite SuiteCloud development projects. This extension allows you to group related objects into project folders, improving maintainability and structure when working with large customisation sets.</p>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>
+                            For more details, visit the&nbsp;
+                            <a
+                                href="https://marketplace.visualstudio.com/items?itemName=JoshFord.netsuite-sdf-object-organiser&ssr=false#overview"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: '#4ea1f7', textDecoration: 'underline' }}
+                            >
+                                Visual Studio Marketplace listing
+                            </a>
+                            .
+                        </p>
                         <br/>
                         <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
                         <video width="100%" height="auto" controls preload="none" poster="/netsuite-sdf-extension-poster.png">
