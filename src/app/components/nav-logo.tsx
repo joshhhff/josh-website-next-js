@@ -9,9 +9,12 @@ export default function NavLogo() {
     const isHomePage = pathname === "/";
     const isProjectsPage = pathname === "/projects";
     const isProjectsSubroute = pathname.startsWith("/projects/");
+    const isPersonalProjectsPage = pathname.startsWith("/about/");
+
+    const linkToNavigateTo = isHomePage || isProjectsPage ? "/" : isProjectsSubroute ? "/projects" : isPersonalProjectsPage ? "/about" : "/";
 
     return (
-        <Link href={isHomePage || isProjectsPage ? "/" : isProjectsSubroute ? "/projects" : "/"}>
+        <Link href={linkToNavigateTo}>
             {isHomePage ? (
                 <p style={{ fontSize: 24 }}>Josh Ford</p>
             ) : (

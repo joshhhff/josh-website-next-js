@@ -42,16 +42,20 @@ body {
 
 /* Mobile dropdown */
 .mobile-dropdown {
-    margin-top: 0.5rem;
     background-color: #333333;
     padding: 1rem;
     width: 90%;
-    border-radius: 0.5rem;
+    border-top-left-radius: 1rem;
     position: absolute;
     right: 0;
+    top: 100%;
+    bottom: 0;
+    height: auto;
+    min-height: calc(100vh - 0.5rem - var(--navbar-height, 0px));
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .footer a {

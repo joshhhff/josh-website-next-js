@@ -33,7 +33,7 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <div style={{ flex: 1, marginRight: '2rem' }}>
                     <p style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
-                        {`I am a UK based Software Developer primarily focused on NetSuite Development. I am currently a 2nd year Degree Apprentice with an Oracle NetSuite Alliance Partner. I started with designing Advanced PDFs for transactions within NetSuite which uses HTML, progressing to now where I can handle complex customisations and integrations using NetSuite's SuiteScript APIs.`}
+                        {`I am a UK based Software Developer primarily focused on NetSuite Development. I am heading into my 3rd year as a  Degree Apprentice with an Oracle NetSuite Alliance Partner. I started with designing Advanced PDFs for transactions within NetSuite which uses HTML, progressing to now where I can handle complex customisations and integrations using NetSuite's SuiteScript APIs.`}
                     </p>
                 </div>
             </div>
@@ -151,6 +151,29 @@ export default async function About({ searchParams }: { searchParams?: Promise<{
                 </div>
             </div>
 
+            <hr style={{ backgroundColor: '#333333', borderTop: '1px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+
+            <div className="personal-project">
+                <h3 style={{ fontSize: 20, fontWeight: 'bold', marginTop: '2rem' }}>{"CloudOps"}</h3>
+                <div style={{ display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1.5, marginRight: '2rem', marginTop: '1rem' }}>
+                        <p style={{ fontSize: 16, lineHeight: '1.8' }}>
+                            {`CloudOps is a small web application which I am building using Next.js, TypeScript, Prisma ORM, PostgreSQL and AWS RDS. So far, the application allows users to track their inventory of items, with future development planned on reporting and analytics, as well as fulfilling orders in an ERP style application.`}
+                            <br/><br/>
+                        </p>
+                        {/* <Link href="">
+                            <Button text="More Details" buttonColour="white" textColour="black" borderRadius={5} />
+                        </Link> */}
+                    </div>
+                    <div className="tech-used" style={{ flex: 1, display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'flex-start' }}>
+                        <SkillsCard image={reactLogo} text="React.js" />
+                        <SkillsCard image={nextLogo} text="Next.js" applyBorderRadius={false} />
+                        <SkillsCard image={typescriptLogo} text="TypeScript" />
+                        <SkillsCard image={awsLogo} text="Amazon Web Services" />
+                    </div>
+                </div>
+            </div>
+            
             <hr style={{ backgroundColor: '#333333', borderTop: '1px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
             <div className="personal-project">

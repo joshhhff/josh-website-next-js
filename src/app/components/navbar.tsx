@@ -43,61 +43,142 @@ export default function Navbar() {
 
                 {/* Mobile menu icon */}
                 <div className="mobile-menu-toggle mobile-nav">
-                    {isMenuOpen ? (
-                        <CgClose 
-                            size={40}
-                            onClick={() => setIsMenuOpen(false)}
-                            style={{ cursor: "pointer" }}
-                        />
-                    ) : (
-                        <CgMenuRight 
-                            size={40}
-                            onClick={() => setIsMenuOpen(true)}
-                            style={{ cursor: "pointer" }}
-                        />
-                    )}
+                    <CgMenuRight 
+                        size={40}
+                        onClick={() => setIsMenuOpen(true)}
+                        style={{ cursor: "pointer" }}
+                    />
                 </div>
             </div>
 
             {/* Mobile dropdown menu */}
             <AnimatePresence>
-                {isMenuOpen && (
-                    <motion.div 
-                        ref={menuRef}
-                        initial={{ x: "100%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: "100%" }}
-                        transition={{ duration: 0.1 }}
-                        className="mobile-dropdown"
+            {isMenuOpen && (
+                <motion.div
+                ref={menuRef}
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="mobile-dropdown"
+                style={{
+                    position: "fixed",
+                    top: 0,
+                    right: 0,
+                    width: "80vw",
+                    maxWidth: 360,
+                    height: "100vh",
+                    background: "#121212",
+                    zIndex: 100,
+                    display: "flex",
+                    flexDirection: "column",
+                    padding: "2rem 1.5rem",
+                    color: "#fff",
+                }}
+                >
+                {/* Close icon */}
+                <button
+                    onClick={() => setIsMenuOpen(false)}
+                    style={{
+                    position: "absolute",
+                    top: 26,
+                    right: 26,
+                    background: "transparent",
+                    border: "none",
+                    color: "#fff",
+                    fontSize: "1.8rem",
+                    cursor: "pointer",
+                    padding: 8,
+                    }}
+                    aria-label="Close menu"
+                >
+                    <CgClose 
+                            size={40}         
+                                    />
+                </button>
+
+                {/* Primary nav */}
+                <div style={{ marginTop: '3rem', width: '95%' }}>
+                    {[
+                    { href: "/projects", label: "Projects" },
+                    { href: "/about", label: "About" },
+                    { href: "/contact", label: "Contact" },
+                    ].map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        padding: "1rem 0",
+                        fontSize: "1.05rem",
+                        fontWeight: 500,
+                        color: "#fff",
+                        textDecoration: "none",
+                        }}
                     >
-                        <Link href="/projects" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
-                            <span>Projects</span>
-                            <IoIosArrowForward size={30} />
-                        </Link>
-                        {/* <Link href="/products" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>...</Link> */}
-                        <Link href="/about" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
-                            <span>About</span>
-                            <IoIosArrowForward size={30} />
-                        </Link>
-                        <Link href="/contact" onClick={() => setIsMenuOpen(false)} style={mobileLinkStyle}>
-                            <span>Contact</span>
-                            <IoIosArrowForward size={30} />
-                        </Link>
-                    </motion.div>
-                )}
+                        <span>{item.label}</span>
+                        <IoIosArrowForward size={20} />
+                    </Link>
+                    ))}
+
+                    {/* Divider */}
+                    <div
+                    style={{
+                        height: 1,
+                        background: "rgba(255,255,255,0.08)",
+                        margin: "1.2rem 0",
+                    }}
+                    />
+
+                    {/* Extra links */}
+                    {[
+                    { href: "https://www.linkedin.com/in/josh-ford-1112a925b/", label: "LinkedIn", external: true },
+                    { href: "https://github.com/joshford", label: "GitHub", external: true },
+                    ].map((item) => (
+                    <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        target={item.external ? "_blank" : "_self"}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                        style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        padding: "1rem 0",
+                        fontSize: "1.05rem",
+                        fontWeight: 500,
+                        color: "#aaa",
+                        textDecoration: "none",
+                        }}
+                    >
+                        <span>{item.label}</span>
+                        <IoIosArrowForward size={18} />
+                    </Link>
+                    ))}
+                </div>
+
+                <div style={{ flex: 1 }} />
+
+                {/* Footer */}
+                <div
+                    style={{
+                    color: "#666",
+                    fontSize: "0.85rem",
+                    textAlign: "center",
+                    marginTop: "2rem",
+                    }}
+                >
+                    &copy; {new Date().getFullYear()} Josh Ford
+                </div>
+                </motion.div>
+            )}
             </AnimatePresence>
+
+
         </nav>
     );
 }
-
-const mobileLinkStyle = {
-    marginBottom: "0.75rem",
-    color: "#fff",
-    textDecoration: "none",
-    fontWeight: "bold",
-    fontSize: "1.75rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%"
-};
