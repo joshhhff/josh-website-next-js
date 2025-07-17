@@ -136,7 +136,7 @@ export default function Navbar() {
                     {/* Extra links */}
                     {[
                     { href: "https://www.linkedin.com/in/josh-ford-1112a925b/", label: "LinkedIn", external: true },
-                    { href: "https://github.com/joshford", label: "GitHub", external: true },
+                    { href: "https://github.com/joshhhff", label: "GitHub", external: true },
                     ].map((item) => (
                     <Link
                         key={item.href}
