@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default async function Product({params}: {params: Promise<{product: string}>}) {
     const productKeys = Constants.ProductKeys;
-    const bannerImage = Utilities.getRandomBannerImage();
+    const bannerImage = await Utilities.getRandomBannerImage();
 
     if (!productKeys.hasOwnProperty( (await params).product)) {
         return (

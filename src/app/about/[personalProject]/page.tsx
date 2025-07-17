@@ -5,7 +5,7 @@ import Footer from '@/app/components/footer';
 
 export default async function PersonalProject({params}: {params: Promise<{personalProject: string}>}) {
     const projectKeys = Constants.PersonalProjectsKeys;
-    const bannerImage = Utilities.getRandomBannerImage();
+    const bannerImage = await Utilities.getRandomBannerImage();
 
     console.log('Project:', (await params).personalProject);
 

@@ -2,7 +2,7 @@ export default abstract class Utilities {
     private static prevIndex = 0;
 
     // retrieve random banner image without repeating the same image twice in a row
-    static getRandomBannerImage (): string {
+    static async getRandomBannerImage (): Promise<string> {
         const bannerImages = [
             '/Banners/Banner1.jpg',
             '/Banners/Banner2.jpg',
