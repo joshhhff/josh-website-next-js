@@ -9,8 +9,17 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const [hasMounted, setHasMounted] = useState(false);
 
+    // Hydration detection
     useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
+    // Toggle body class after hydration
+    useEffect(() => {
+        if (!hasMounted) return;
+
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setIsMenuOpen(false);
@@ -19,12 +28,17 @@ export default function Navbar() {
 
         if (isMenuOpen) {
             document.addEventListener('mousedown', handleClickOutside);
+            document.body.classList.add('menu-open');
         } else {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.body.classList.remove('menu-open');
         }
 
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [isMenuOpen]);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.body.classList.remove('menu-open');
+        };
+    }, [isMenuOpen, hasMounted]);
 
     return (
         <nav className="slide-down navbar-container">
@@ -53,7 +67,7 @@ export default function Navbar() {
 
             {/* Mobile dropdown menu */}
             <AnimatePresence>
-            {isMenuOpen && (
+            {isMenuOpen && hasMounted && (
                 <motion.div
                 ref={menuRef}
                 initial={{ x: "100%" }}

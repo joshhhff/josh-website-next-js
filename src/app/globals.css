@@ -9,6 +9,10 @@ body {
     overflow-x: hidden;
 }
 
+body.menu-open {
+    overflow: hidden; /* Prevent body scroll when menu is open */
+}
+
 /* Layout container */
 .navbar-container {
     width: 100%;
