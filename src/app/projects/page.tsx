@@ -32,28 +32,31 @@ export default function Projects() {
                         }
                         isProject={true}
                         link='projects/orderSplitting'
+                        hasLink={false}    /* Told to remove tech details from website due to company IP */
                     />
                 </div>
                 <div className="right-projects">
                     <ProjectCard 
                         title="NetSuite x TrustPilot Integration" 
                         date="January 2025"
-                        description="A custom integration which allowed my client to automatically send out Service & Product Reviews for their Sales Orders to customers."
+                        description="A custom integration which allowed my client to automatically send out Service & Product Reviews for their Sales Orders to customers. If item records didn't include a product image, then they wouldn't qualify for a Product Review and a Service Review would be sent instead."
                         isProject={true}
                         slideIn={true}
                         differentForMobile={true}
                         topRated={true}
                         link="/projects/trustpilotIntegration"
+                        hasLink={false}    /* Told to remove tech details from website due to company IP */
                     />
                     <ProjectCard 
-                        title="Auto-ASN Generation" 
-                        date="September 2024"
-                        description="When Item Fulfillments were shipped in NetSuite, an 856 Ship Notice EDI file would be generated including all shipment information, and then transferred via SFTP."
+                        title="Bulk Purchase Order Email Sending" 
+                        date="July 2025"
+                        description="A custom screen in NetSuite which allowed users to select multiple Purchase Orders and send emails all at once with either a PDF or CSV attachment. Grouping functionality also allowed users to send multiple Purchase Orders of the same vendor in one single email."
                         isProject={true}
                         slideIn={true}
                         differentForMobile={true}
                         topRated={true}
                         link='projects/ediShipNotice'
+                        hasLink={false}    /* Told to remove tech details from website due to company IP */
                     />
                 </div>
             </div>
@@ -67,6 +70,7 @@ export default function Projects() {
                     link='projects/pick2Ship'
                     slideIn={true}
                     slideInDirection='left'
+                    hasLink={false}    /* Told to remove tech details from website due to company IP */
                 />
             </div>
 
