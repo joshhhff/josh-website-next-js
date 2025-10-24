@@ -35,17 +35,14 @@ export default function Footer() {
                     {/* Projects */}
                     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: "200px" }}>
                         <span style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem" }}>Projects</span>
-                        <Link href="/projects/orderSplitting" className="footer-link">NetSuite x Shopify Order Splitting</Link>
-                        <Link href="/projects/trustpilotIntegration" className="footer-link">NetSuite x Trustpilot Integration</Link>
-                        <Link href="/projects/ediShipNotice" className="footer-link">Auto-ASN Generation</Link>
-                        <Link href="/projects/pick2Ship" className="footer-link">Pick2Ship</Link>
+                        <Link href="/projects?scrollTo=featured" className="footer-link">Featured Projects</Link>
+                        <Link href="/projects?scrollTo=additional" className="footer-link">Additional Projects</Link>
                     </div>
 
                     {/* About Me */}
                     <div style={{ display: "flex", flexDirection: "column", flex: 1, minWidth: "200px" }}>
                         <span style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "0.5rem" }}>About Me</span>
-                        <Link href="/about?scrollTo=technologies" className="footer-link">Technologies &amp; Frameworks</Link>
-                        <Link href="/about?scrollTo=languages" className="footer-link">Languages</Link>
+                        <Link href="/about?scrollTo=technologies" className="footer-link">Technologies</Link>
                         <Link href="/about?scrollTo=personalProjects" className="footer-link">Personal Projects</Link>
                     </div>
 

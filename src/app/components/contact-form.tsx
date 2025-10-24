@@ -20,8 +20,8 @@ export default function ContactForm(props: ContactFormProps) {
 
     async function submitContactForm(event: React.FormEvent): Promise<void> {
         event.preventDefault();
-        setLoading(true); // Set loading to true
-        setError(""); // Clear any previous errors
+        setLoading(true);
+        setError("");
 
         const formData = {
             apiKey: props.apiKey,
@@ -45,75 +45,181 @@ export default function ContactForm(props: ContactFormProps) {
             if (response.emailSent) {
                 router.push("/contact/success");
             } else {
-                setLoading(false); // Set loading to false
+                setLoading(false);
                 setError(response.error || "Failed to send email. Please try again later.");
             }
         } catch (err) {
             console.error("Error sending email:", err);
             setError("An unexpected error occurred. Please try again later.");
+            setLoading(false);
         }
     }
+
+    const inputStyle: React.CSSProperties = {
+        width: '100%',
+        padding: '0.75rem',
+        backgroundColor: '#1a1a1a',
+        border: '1px solid #333333',
+        borderRadius: '8px',
+        color: 'white',
+        fontSize: '1rem',
+        outline: 'none',
+        transition: 'border-color 0.3s',
+        fontFamily: 'inherit'
+    };
 
     return (
         <form 
             className="contact-form-details" 
             onSubmit={submitContactForm} 
-            style={{ width: '60%', display: 'flex', flexDirection: 'column', borderRadius: '8px', background: 'transparent' }}
+            style={{ 
+                width: '100%', 
+                display: 'flex', 
+                flexDirection: 'column', 
+            }}
         >
-            <div className="name-details">
-                <div className="name-inputs" style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-evenly' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '1.5rem', color: '#fff' }}>
+                Send Me a Message
+            </h3>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {/* Name and Email Row */}
+                <div className="name-details" style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="name-inputs" style={{ flex: 1 }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', color: '#b2b2b2', fontSize: '0.9rem' }}>
+                            Name *
+                        </label>
+                        <input 
+                            type="text" 
+                            required={true}
+                            placeholder="Your name" 
+                            style={inputStyle}
+                            value={name} 
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} 
+                            disabled={loading}
+                            onFocus={(e) => e.currentTarget.style.borderColor = '#666'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#333333'}
+                        />
+                    </div>
+                    <div className="name-inputs" style={{ flex: 1 }}>
+                        <label style={{ display: 'block', marginBottom: '0.5rem', color: '#b2b2b2', fontSize: '0.9rem' }}>
+                            Email *
+                        </label>
+                        <input 
+                            type="email" 
+                            required={true}
+                            placeholder="your.email@example.com" 
+                            style={inputStyle}
+                            value={email} 
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} 
+                            disabled={loading}
+                            onFocus={(e) => e.currentTarget.style.borderColor = '#666'}
+                            onBlur={(e) => e.currentTarget.style.borderColor = '#333333'}
+                        />
+                    </div>
+                </div>
+
+                {/* Subject */}
+                <div>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#b2b2b2', fontSize: '0.9rem' }}>
+                        Subject *
+                    </label>
                     <input 
                         type="text" 
+                        placeholder="What's this about?" 
                         required={true}
-                        placeholder="Name" 
-                        style={{ width: '48%', padding: '1rem', margin: '0 1rem 1rem 1rem', borderRadius: 5, border: '1px solid #333333', color: 'white', backgroundColor: 'transparent' }} 
-                        value={name} 
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} 
-                        disabled={loading} // Disable input when loading
-                    />
-                    <input 
-                        type="email" 
-                        required={true}
-                        placeholder="Email" 
-                        style={{ width: '48%', padding: '1rem', margin: '0  1rem 1rem', borderRadius: 5, border: '1px solid #333333', color: 'white', backgroundColor: 'transparent' }} 
-                        value={email} 
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} 
-                        disabled={loading} // Disable input when loading
+                        style={inputStyle}
+                        value={subject} 
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)} 
+                        disabled={loading}
+                        onFocus={(e) => e.currentTarget.style.borderColor = '#666'}
+                        onBlur={(e) => e.currentTarget.style.borderColor = '#333333'}
                     />
                 </div>
-                <input 
-                    type="text" 
-                    placeholder="Subject" 
-                    required={true}
-                    style={{ width: '96%', padding: '1rem', margin: '1rem', borderRadius: 5, border: '1px solid #333333', backgroundColor: 'transparent', color: 'white' }} 
-                    value={subject} 
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSubject(e.target.value)} 
-                    disabled={loading} // Disable input when loading
-                />
-                <textarea 
-                    placeholder="Message" 
-                    required={true}
-                    style={{ width: '96%', padding: '1rem', margin: '1rem', borderRadius: 5, border: '1px solid #333333', backgroundColor: 'transparent', height: '200px', resize: 'none' }} 
-                    value={message} 
-                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} 
-                    disabled={loading} // Disable textarea when loading
-                />
-            </div>
-            {error && <h3 style={{ color: 'red', fontWeight: 'bold', marginLeft: '1rem' }}>{error}</h3>}
-            <div className="submit-button" style={{ margin: '1rem', width: '100%', display: 'flex', alignItems: 'center' }}>
-                {!loading && (
-                    <Button 
-                    text={loading ? "Sending..." : "Send Message"} 
-                    buttonColour="white" 
-                    textColour="black" 
-                    borderRadius={5}
-                    isSubmit={true}
-                    disabled={loading} // Disable button when loading
-                />
+
+                {/* Message */}
+                <div>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#b2b2b2', fontSize: '0.9rem' }}>
+                        Message *
+                    </label>
+                    <textarea 
+                        placeholder="Tell me about your project or question..." 
+                        required={true}
+                        rows={6}
+                        style={{
+                            ...inputStyle,
+                            resize: 'vertical',
+                            minHeight: '150px'
+                        }}
+                        value={message} 
+                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} 
+                        disabled={loading}
+                        onFocus={(e) => e.currentTarget.style.borderColor = '#666'}
+                        onBlur={(e) => e.currentTarget.style.borderColor = '#333333'}
+                    />
+                </div>
+
+                {/* Error Message */}
+                {error && (
+                    <div style={{ 
+                        color: '#ff6b6b', 
+                        fontWeight: 500, 
+                        fontSize: '0.9rem',
+                        padding: '0.75rem',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        border: '1px solid rgba(255, 107, 107, 0.3)',
+                        borderRadius: '8px'
+                    }}>
+                        {error}
+                    </div>
                 )}
-                
-                {loading && <div className="spinner" style={{ marginLeft: '1rem', border: '4px solid #f3f3f3', borderTop: '4px solid #333', borderRadius: '50%', width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} />}
+
+                {/* Submit Button */}
+                <div className="submit-button" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    {!loading ? (
+                        <Button 
+                            text="Send Message" 
+                            buttonColour="#444" 
+                            textColour="white" 
+                            borderRadius={8}
+                            isSubmit={true}
+                            disabled={loading}
+                            noBorder={true}
+                        />
+                    ) : (
+                        <button
+                            type="button"
+                            disabled
+                            style={{
+                                padding: '0.875rem 2rem',
+                                backgroundColor: '#333',
+                                color: '#888',
+                                border: '1px solid',
+                                borderRadius: '8px',
+                                fontSize: '1rem',
+                                fontWeight: 600,
+                                cursor: 'not-allowed',
+                                width: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '0.75rem'
+                            }}
+                        >
+                            <div style={{ 
+                                border: '3px solid #555', 
+                                borderTop: '3px solid #fff', 
+                                borderRadius: '50%', 
+                                width: '20px', 
+                                height: '20px', 
+                                animation: 'spin 1s linear infinite' 
+                            }} />
+                            Sending...
+                        </button>
+                    )}
+                </div>
             </div>
+
             <style jsx>{`
                 @keyframes spin {
                     0% { transform: rotate(0deg); }
