@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "../components/project-card"
 import Footer from "../components/footer";
-import AnimatedText from "../components/animated-text";
 
 // Define project data with categories
 const additionalProjects = [
@@ -98,13 +97,17 @@ export default function ProjectsClient() {
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
             {/* Header Section */}
             <div className="page-title" style={{ textAlign: 'left', width: '100%' }}>
-                <AnimatedText as='h1' style={{ fontSize: 50, fontWeight: 'bold' }}>Projects</AnimatedText>
-                <AnimatedText as='h2' style={{ fontSize: 20, color: '#b2b2b2' }}>Get an idea of some of the projects that I have deployed to different NetSuite accounts</AnimatedText>
+                <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} style={{ fontSize: 50, fontWeight: 'bold' }}>Projects</motion.h1>
+                <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} style={{ fontSize: 20, color: '#b2b2b2' }}>Get an idea of some of the projects that I have deployed to different NetSuite accounts</motion.h2>
             </div>
             
-            <AnimatedText as='div'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
                 <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
-            </AnimatedText>
+            </motion.div>
 
             {/* Stats Section */}
             <motion.div
@@ -157,15 +160,22 @@ export default function ProjectsClient() {
 
             {/* Top Rated Projects */}
             <div id="featured">
-                <AnimatedText as='h2' className='section-title'>Featured Projects</AnimatedText>
+                <motion.h2 
+                    className='section-title'
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    Featured Projects
+                </motion.h2>
             </div>
-            <p style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
+            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
                 {"Highlighting some of the most impactful NetSuite customisations I've delivered"}
-            </p>
+            </motion.p>
             
             <div className="project-container">
                 <div className="left-project">
-                    <ProjectCard 
+                    {/* <ProjectCard 
                         title="Custom Replenishments" 
                         date="August 2025"
                         slideIn={true}
@@ -180,9 +190,7 @@ export default function ProjectsClient() {
                         isProject={true}
                         link='projects/orderSplitting'
                         hasLink={false}
-                    />
-                </div>
-                <div className="right-projects">
+                    /> */}
                     <ProjectCard 
                         title="NetSuite x TrustPilot Integration" 
                         date="January 2025"
@@ -194,6 +202,9 @@ export default function ProjectsClient() {
                         link="/projects/trustpilotIntegration"
                         hasLink={false}
                     />
+                </div>
+                <div className="right-projects">
+                    
                     <ProjectCard 
                         title="Bulk Purchase Order Email Sending" 
                         date="July 2025"
@@ -221,13 +232,24 @@ export default function ProjectsClient() {
                 />
             </div>
 
-            <AnimatedText as='div'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
                 <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
-            </AnimatedText>
+            </motion.div>
 
             {/* More Projects Section with Categories */}
             <div id='additional'>
-                <AnimatedText as='h2' className='section-title'>Additional Projects</AnimatedText>
+                <motion.h2 
+                    className='section-title'
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    Additional Projects
+                </motion.h2>
             </div>
             <p style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
                 A collection of NetSuite enhancements I have delivered across various business functions
