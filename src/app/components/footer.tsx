@@ -5,7 +5,7 @@ import ScrollToTopDivider from "./scroll-to-top-divider";
 
 export default function Footer() {
     return (
-        <div className="footer" style={{ width: "100%", padding: "1rem", color: "white" }}>
+        <div className="footer" style={{ width: "100%", padding: "0rem 1rem 1rem 1rem", color: "white" }}>
             <ScrollToTopDivider />
             <div
                 className="footer-content"

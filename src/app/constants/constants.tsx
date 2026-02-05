@@ -188,6 +188,13 @@ export const PersonalProjectsKeys = {
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>NetSuite SDF Object Organiser is a Visual Studio Code extension that helps you organise custom objects in your NetSuite SuiteCloud development projects. This extension allows you to group related objects into project folders, improving maintainability and structure when working with large customisation sets.</p>
                         <br/>
+                        <p style={{ color: '#b2b2b2' }}>Key features include:</p>
+                        <ul style={{ color: '#b2b2b2' }}>
+                            <li>- Easily group XML objects into folders based on object type. For example, all custom transaction fields would be grouped together under &quot;Transaction Body Custom Fields&quot;.</li>
+                            <li>- Automatically add object references to your deploy.xml file when you create or move objects, ensuring your deployment configuration is always up to date.</li>
+                            <li>- Refresh your deploy.xml file to ensure it only contains references to objects that exist in your project, helping to prevent deployment errors.</li>
+                        </ul>
+                        <br/>
                         <p style={{ color: '#b2b2b2' }}>
                             For more details, visit the&nbsp;
                             <a

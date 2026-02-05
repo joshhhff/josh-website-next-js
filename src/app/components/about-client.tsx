@@ -7,12 +7,12 @@ import Footer from "../components/footer";
 const projects = [
   {
     title: "NetSuite SDF Object Organiser",
-    description: "A Visual Studio Code extension which allows NetSuite SDF Developers to easily organise their SDF objects. This allows for easily organising their SDF objects into related folders, adding object references to the deploy.xml file, and refreshing the deploy.xml file for correct object references.",
+    description: "A Visual Studio Code extension which allows NetSuite SDF Developers to easily organise their SDF objects. Developers can easily organise objects by type, easily add the object reference to the deploy.xml file, and refresh the deploy.xml file to ensure they are only referencing objects which exist in the project.",
     link: "about/sdfVscodeExtension",
     image: "/placeholder2.png",
-    tags: ["Visual Studio Code", "NetSuite", "SuiteCloud Development Framework", "DevTools"]
+    tags: ["Visual Studio Code", "NetSuite", "SuiteCloud Development Framework", "DevTools", "TypeScript"]
   },
-  {
+  /* {
     title: "FitDiary",
     description: "FitDiary is a fitness tracker app which I will eventually release on Android & iOS. The app allows users to track their workouts, set goals, and monitor their progress over time.",
     link: "about/fitDiary",
@@ -25,7 +25,7 @@ const projects = [
     link: "",
     image: "/placeholder3.png",
     tags: ["Next.js", "AWS", "ERP"]
-  },
+  }, */
 ];
 
 const techCategories = [
