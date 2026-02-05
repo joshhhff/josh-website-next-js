@@ -128,31 +128,6 @@ export const ProjectKeys = {
     },
 }
 
-export const ProductKeys = {
-    aiChatbot: {
-        lastModified: '2025-05-11',
-        title: 'NetSuite AI Chatbot',
-        price: 'Coming Soon...',
-        content: () => {
-            return (
-                <>
-                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
-                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Product Information</h1>
-                        <br/>
-                        <p style={{ color: '#b2b2b2' }}>A custom AI chatbot integrated within NetSuite. Ask general queries, or ask about specific transactions within your NetSuite instance. This AI Chatbot allows users to ask about transactions, query employee information, or even query about inventory information for all or specific locations.</p>
-                        <br/>
-                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
-                        <video width="100%" height="auto" controls preload="none">
-                            <source src="/ai-chatbot.mp4" type="video/mp4" />
-                            Your browser does not support videos.
-                        </video>
-                    </div>
-                </>
-            );
-        }
-    }
-}
-
 export const PersonalProjectsKeys = {
     aiChatbot: {
         lastModified: '2025-05-11',
