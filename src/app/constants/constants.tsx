@@ -128,31 +128,6 @@ export const ProjectKeys = {
     },
 }
 
-export const ProductKeys = {
-    aiChatbot: {
-        lastModified: '2025-05-11',
-        title: 'NetSuite AI Chatbot',
-        price: 'Coming Soon...',
-        content: () => {
-            return (
-                <>
-                    <div className="main-info-container" style={{ margin: '5vw', marginTop: 0 }}>
-                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Product Information</h1>
-                        <br/>
-                        <p style={{ color: '#b2b2b2' }}>A custom AI chatbot integrated within NetSuite. Ask general queries, or ask about specific transactions within your NetSuite instance. This AI Chatbot allows users to ask about transactions, query employee information, or even query about inventory information for all or specific locations.</p>
-                        <br/>
-                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
-                        <video width="100%" height="auto" controls preload="none">
-                            <source src="/ai-chatbot.mp4" type="video/mp4" />
-                            Your browser does not support videos.
-                        </video>
-                    </div>
-                </>
-            );
-        }
-    }
-}
-
 export const PersonalProjectsKeys = {
     aiChatbot: {
         lastModified: '2025-05-11',
@@ -187,6 +162,13 @@ export const PersonalProjectsKeys = {
                         <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Information</h1>
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>NetSuite SDF Object Organiser is a Visual Studio Code extension that helps you organise custom objects in your NetSuite SuiteCloud development projects. This extension allows you to group related objects into project folders, improving maintainability and structure when working with large customisation sets.</p>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>Key features include:</p>
+                        <ul style={{ color: '#b2b2b2' }}>
+                            <li>- Easily group XML objects into folders based on object type. For example, all custom transaction fields would be grouped together under &quot;Transaction Body Custom Fields&quot;.</li>
+                            <li>- Automatically add object references to your deploy.xml file when you create or move objects, ensuring your deployment configuration is always up to date.</li>
+                            <li>- Refresh your deploy.xml file to ensure it only contains references to objects that exist in your project, helping to prevent deployment errors.</li>
+                        </ul>
                         <br/>
                         <p style={{ color: '#b2b2b2' }}>
                             For more details, visit the&nbsp;
