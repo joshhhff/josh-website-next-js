@@ -37,17 +37,17 @@ const techCategories = [
   {
     title: "Web Development",
     icon: <Code size={24} />,
-    skills: ["React.js", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS"]
+    skills: ["React.js", "Next.js", "JavaScript", "TypeScript", "WordPress", "HTML", "CSS"]
   },
   {
     title: "Mobile Development",
     icon: <Smartphone size={24} />,
-    skills: ["Flutter", "Dart"]
+    skills: ["Flutter", "Dart", "TestFlight", "Google Play Console", "Mobile UI/UX Design"]
   },
   {
     title: "Other Technologies",
     icon: <Cloud size={24} />,
-    skills: ["Oracle Cloud Infrastructure", "C#",  "ASP.NET Core", "Amazon Web Services", "Firebase", "Java", "Python"]
+    skills: ["Git", "Visual Studio Code", "Artificial Intelligence", "Claude", "Claude Code", "Oracle Cloud Infrastructure"]
   }
 ];
 
@@ -110,7 +110,7 @@ export default function AboutClient() {
         </p>
         
         <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#b2b2b2', marginBottom: '2rem' }}>
-          I am also a Degree Apprentice working for an Oracle Alliance Partner who specialises in NetSuite implementations. During my apprenticeship I have been able to work on a wide range of projects, and have been involved in several NetSuite implementations.
+          I am a Software Developer with a strong background in building web and mobile applications. I work for an Oracle Alliance Partner specialising in NetSuite implementations, where I have contributed to a wide range of projects and played an integral role in several end-to-end NetSuite implementations. A key highlight of my work includes architecting and developing a React.js web application hosted within NetSuite, paired with a companion mobile application that integrates with NetSuite seamlessly and securely.
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

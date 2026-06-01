@@ -183,11 +183,16 @@ export const PersonalProjectsKeys = {
                             .
                         </p>
                         <br/>
-                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
+                        {/* <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Preview</h1>
                         <video width="100%" height="auto" controls preload="none" poster="/netsuite-sdf-extension-poster.png">
                             <source src="/VsCode Extension Demo.mp4" type="video/mp4" />
                             Your browser does not support videos.
-                        </video>
+                        </video> */}
+                        <h1 style={{ fontSize: 25, fontWeight: 'bold' }}>Upcoming Updates</h1>
+                        <br/>
+                        <p style={{ color: '#b2b2b2' }}>
+                            Currently working on a new update that will enable developers to create XML objects and deploy scripts directly in Visual Studio Code, eliminating the need for manual UI creation or relying on AI-generated forms that may introduce hallucinations.
+                        </p>
                     </div>
                 </>
             )

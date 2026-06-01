@@ -72,7 +72,7 @@ export default function Footer() {
                 <div className="footer-image" style={{ marginLeft: "auto", maxWidth: "400px", width: "100%" }}>
                     <Link href="/">
                         <Image
-                            src="/FooterImage-2.png"
+                            src="/footer-banner-no-tagline.png"
                             alt="Josh Ford - Your Vision, Coded"
                             width={400}
                             height={100}

@@ -7,6 +7,12 @@ import Footer from "../components/footer";
 // Define project data with categories
 const additionalProjects = [
     {
+        title: "Pick2Ship - WMS",
+        date: "June 2024",
+        description: "A large addtion to standard NetSuite WMS which allowed warehouse operators to skip the packing process in Ship Central and ship directly after picking in WMS. Warehouse operators could choose to ship once they have selected their Staging Bin, from there select number of boxes, pack items into boxes, and then presented with shipping details before progressing further.",
+        categories: ["WMS", "Automation"]
+    },
+    {
         title: "Auto-Populating values - WMS/Ship Central",
         date: "Commonly Requested",
         description: "Auto-populating values in WMS and Ship Central to save time and reduce errors.",
@@ -55,12 +61,6 @@ const additionalProjects = [
         categories: ["Automation"]
     },
     {
-        title: "Custom PDF Printing of Vendor Return Authorisations",
-        date: "March 2024",
-        description: "Adding PDF printing functionality to VRMAs in NetSuite due to no standard being available.",
-        categories: ["Automation"]
-    },
-    {
         title: "Custom PDF Printing of Item Receipts",
         date: "November 2023",
         description: "Adding PDF printing functionality to Item Receipts in NetSuite.",
@@ -76,6 +76,30 @@ const additionalProjects = [
         title: "Auto-Generating Lot Numbers on Inbound Receipts",
         date: "Commonly Requested",
         description: "Automatically generate lot numbers for inbound receipts in NetSuite, streamlining the receiving process and improving inventory management. Also included logic on pre-determined criteria for auto-assigning Inventory Statuses of received lots.",
+        categories: ["WMS", "Automation"]
+    },
+    {
+        title: "Custom PDF Printing of Vendor Return Authorisations",
+        date: "March 2024",
+        description: "Adding PDF printing functionality to VRMAs in NetSuite due to no standard being available.",
+        categories: ["Automation"]
+    },
+    /* {
+        title: "Sales Order Estimated Gross Margin Calculation",
+        date: "June 2026",
+        description: "Custom columns on Sales Order transaction lines calculating the estimated gross margin amount and percentage, derived from each item's Total Landed Cost (sourced from custom fields on the item record), the line quantity, and the sale price.",
+        categories: ["Reporting", "Automation"]
+    }, */
+    {
+        title: "Custom Replenishments",
+        date: "November 2025",
+        description: "Automated replenishment task generation triggered on Wave creation, ensuring picking locations are consistently stocked to fulfil orders efficiently. Also featured a dashboard providing real-time visibility of stock levels across picking locations, with the ability to manually create replenishment tasks as needed.",
+        categories: ["WMS", "Automation"]
+    },
+    {
+        title: "Bulk Item Fulfillment Label Printing",
+        date: "June 2026",
+        description: `A custom Suitelet allowing users to select multiple Item Fulfillments and print all associated item labels at once — eliminating the need to open each Item Fulfillment individually and print labels one at a time.`,
         categories: ["WMS", "Automation"]
     }
 ];
@@ -122,8 +146,8 @@ export default function ProjectsClient() {
                 }}
             >
                 {[
-                    { number: '20+', label: 'Projects Completed' },
-                    { number: '10+', label: 'NetSuite Accounts' },
+                    /* { number: '20+', label: 'Projects Completed' }, */
+                    { number: '15+', label: 'NetSuite Accounts' },
                     { number: '2+', label: 'Years Experience' },
                 ].map((stat, index) => (
                     <motion.div
@@ -221,11 +245,11 @@ export default function ProjectsClient() {
 
             <div className="full-width-project">
                 <ProjectCard 
-                    title="Pick2Ship - WMS"
-                    date="June 2024"
-                    description='A large addtion to standard NetSuite WMS which allowed warehouse operators to skip the packing process in Ship Central and ship directly after picking in WMS. Warehouse operators could choose to ship once they have selected their Staging Bin, from there select number of boxes, pack items into boxes, and then presented with shipping details before progressing further.'
+                    title="B2B SFTP Integration"
+                    date="June 2026"
+                    description='A direct SFTP integration importing Cash Sales and Cash Refunds into NetSuite from daily sales files. A weekly Stock Reconciliation process compared, flagged, and adjusted inventory discrepancies in NetSuite against a weekly stock file. A custom dashboard allowed users to monitor the integration, review import logs and errors, and manually re-trigger failed imports once the root cause had been resolved.'
                     isProject={true}
-                    link='projects/pick2Ship'
+                    link='projects/b2bSftpIntegration'
                     slideIn={true}
                     slideInDirection='left'
                     hasLink={false}
