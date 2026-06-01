@@ -50,7 +50,6 @@ export default function Navbar() {
                 {/* Desktop menu */}
                 <div className="nav-menu desktop-nav">
                     <Link href="/projects">Projects</Link>
-                    {/* <Link href="/products">Products</Link> */}
                     <Link href="/about">About</Link>
                     <Link href="/contact">Contact</Link>
                 </div>
