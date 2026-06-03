@@ -136,7 +136,7 @@ export default function AboutClient() {
       <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
       {/* Technologies Section */}
-      <h2 className="section-title">Technologies I Work With</h2>
+      <h2 className="section-title" id="technologies">Technologies I Work With</h2>
       <p style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
         I have experience with a wide range of technologies spanning ERP systems, web development, mobile applications, and cloud services.
       </p>
@@ -213,7 +213,7 @@ export default function AboutClient() {
       <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
 
       {/* Projects Section */}
-      <h2 className="section-title">Personal Projects</h2>
+      <h2 className="section-title" id="personalProjects">Personal Projects</h2>
       <p style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
         A showcase of my personal development work
       </p>

@@ -76,6 +76,14 @@ body.menu-open {
     filter: brightness(0.5);
 }
 
+.footer .footer-link-privacy {
+    color: grey !important;
+}
+
+.footer .footer-link-privacy:hover {
+    color: white !important;
+}
+
 .footer-icons a svg:hover {
     color: grey !important;
 }
