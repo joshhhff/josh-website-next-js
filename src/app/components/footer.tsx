@@ -83,7 +83,14 @@ export default function Footer() {
             </div>
 
             <br />
-            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    width: "100%",
+                    gap: "1rem",
+                }}>
                 <p style={{ color: "grey", margin: 0 }}>
                     &copy; {new Date().getFullYear()} Josh Ford - All Rights Reserved
                 </p>
