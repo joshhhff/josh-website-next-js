@@ -83,9 +83,21 @@ export default function Footer() {
             </div>
 
             <br />
-            <p style={{ textAlign: "left", color: "grey" }}>
-                &copy; {new Date().getFullYear()} Josh Ford - All Rights Reserved
-            </p>
+            <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    width: "100%",
+                    gap: "1rem",
+                }}>
+                <p style={{ color: "grey", margin: 0 }}>
+                    &copy; {new Date().getFullYear()} Josh Ford - All Rights Reserved
+                </p>
+                <Link href="/privacy" className="footer-link-privacy">
+                    Privacy Policy
+                </Link>
+            </div>
             <br />
         </div>
     );
