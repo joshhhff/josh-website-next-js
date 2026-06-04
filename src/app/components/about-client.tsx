@@ -47,7 +47,7 @@ const techCategories = [
   {
     title: "Other Technologies",
     icon: <Cloud size={24} />,
-    skills: ["Git", "Visual Studio Code", "Artificial Intelligence", "Claude", "Claude Code", "Oracle Cloud Infrastructure"]
+    skills: ["Git", "Visual Studio Code", "Artificial Intelligence", "Google Cloud Platform", "Claude", "Claude Code", "Oracle Cloud Infrastructure"]
   }
 ];
 

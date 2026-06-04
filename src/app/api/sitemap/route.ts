@@ -1,25 +1,16 @@
 'use server';
-import { ProjectKeys, PersonalProjectsKeys } from '@/app/constants/constants';
+import { PersonalProjectsKeys } from '@/app/constants/constants';
 
 export async function GET(request: Request) {
     const domainToUse = new URL(request.url).host;
 
     const pages = [
         { url: `https://${domainToUse}`, lastmod: '2025-05-09' },
-        { url: `https://${domainToUse}/projects`, lastmod: '2025-05-14' },
-        { url: `https://${domainToUse}/about`, lastmod: '2025-05-11' },
+        { url: `https://${domainToUse}/projects`, lastmod: '2026-06-03' },
+        { url: `https://${domainToUse}/about`, lastmod: '2025-06-04' },
         { url: `https://${domainToUse}/contact`, lastmod: '2025-05-11' },
-    ]
-
-    const dynamicProjectPages = (Object.keys(ProjectKeys) as Array<keyof typeof ProjectKeys>).map((key) => {
-        const projectKey = key as keyof typeof ProjectKeys;
-        const project = ProjectKeys[key];
-        
-        return {
-            url: `https://${domainToUse}/projects/${projectKey}`,
-            lastmod: project.lastModified,
-        }
-    });
+        { url: `https://${domainToUse}/privacy`, lastmod: '2025-06-03' },
+    ];
 
     const dynamicPersonalProjectPages = (Object.keys(PersonalProjectsKeys) as Array<keyof typeof PersonalProjectsKeys>).map((key) => {
         const projectKey = key as keyof typeof PersonalProjectsKeys;
@@ -31,7 +22,6 @@ export async function GET(request: Request) {
         }
     });
 
-    pages.push(...dynamicProjectPages);
     pages.push(...dynamicPersonalProjectPages);
 
     // Generate the sitemap
