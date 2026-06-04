@@ -129,7 +129,7 @@ export const ProjectKeys = {
 }
 
 export const PersonalProjectsKeys = {
-    aiChatbot: {
+    /* aiChatbot: {
         lastModified: '2025-05-11',
         title: 'NetSuite AI Chatbot',
         date: 'Coming Soon...',
@@ -150,9 +150,9 @@ export const PersonalProjectsKeys = {
                 </>
             );
         }
-    },
+    }, */
     sdfVscodeExtension: {
-        lastModified: '2025-06-04',
+        lastModified: '2026-06-03',
         title: 'NetSuite SDF Object Organiser',
         date: 'Released: 4 June 2025',
         content: () => {
@@ -198,7 +198,7 @@ export const PersonalProjectsKeys = {
             )
         }
     },
-    fitDiary: {
+    /* fitDiary: {
         lastModified: '2025-05-11',
         title: 'FitDiary - Mobile App',
         date: 'In Progress',
@@ -219,5 +219,5 @@ export const PersonalProjectsKeys = {
                 </>
             );
         }
-    }
+    } */
 }
