@@ -84,12 +84,12 @@ const additionalProjects = [
         description: "Adding PDF printing functionality to VRMAs in NetSuite due to no standard being available.",
         categories: ["Automation"]
     },
-    /* {
+    {
         title: "Sales Order Estimated Gross Margin Calculation",
         date: "June 2026",
         description: "Custom columns on Sales Order transaction lines calculating the estimated gross margin amount and percentage, derived from each item's Total Landed Cost (sourced from custom fields on the item record), the line quantity, and the sale price.",
         categories: ["Reporting", "Automation"]
-    }, */
+    },
     {
         title: "Custom Replenishments",
         date: "November 2025",
@@ -101,7 +101,19 @@ const additionalProjects = [
         date: "June 2026",
         description: `A custom Suitelet allowing users to select multiple Item Fulfillments and print all associated item labels at once — eliminating the need to open each Item Fulfillment individually and print labels one at a time.`,
         categories: ["WMS", "Automation"]
-    }
+    },
+    {
+        title: "Custom GL Account Override",
+        date: "July 2026",
+        description: "Transaction line-level GL account override functionality allowing posted accounts to be set at the location level instead of relying solely on the account configured on the item record. This enabled different transaction types to route items to different accounts based on warehouse location, providing greater accounting flexibility.",
+        categories: ["Reporting", "Automation"]
+    },
+    {
+        title: "Additional Information in SCM Mobile",
+        date: "August 2026",
+        description: "Enhancing applications within SCM Mobile to display additional fields, columns, and information to warehouse operators.",
+        categories: ["WMS", "Automation"]
+    },
 ];
 
 export default function ProjectsClient() {
@@ -116,6 +128,9 @@ export default function ProjectsClient() {
     const getColumnProjects = (columnIndex: number) => {
         return filteredProjects.filter((_, index) => index % 3 === columnIndex);
     };
+
+    // start from 1st September 2023
+    const netsuiteYearsExperience = Math.floor((new Date().getTime() - new Date('2023-09-01').getTime()) / (1000 * 60 * 60 * 24 * 365));
 
     return (
         <div className="page-container" style={{ height: '100%', width: '100%', paddingTop: '15vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
@@ -148,7 +163,7 @@ export default function ProjectsClient() {
                 {[
                     /* { number: '20+', label: 'Projects Completed' }, */
                     { number: '15+', label: 'NetSuite Accounts' },
-                    { number: '2+', label: 'Years Experience' },
+                    { number: `${netsuiteYearsExperience}+`, label: 'Years Experience' },
                 ].map((stat, index) => (
                     <motion.div
                         key={stat.label}
