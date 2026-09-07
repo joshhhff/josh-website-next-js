@@ -32,7 +32,7 @@ const techCategories = [
   {
     title: "ERP & Backend",
     icon: <Database size={24} />,
-    skills: ["NetSuite", "SuiteScript", "Node.js", "Express.js", "SQL", "PostgreSQL", "Prisma ORM"]
+    skills: ["NetSuite", "SuiteScript", "SuiteFlow", "Node.js", "Express.js", "SQL", "PostgreSQL", "Prisma ORM"]
   },
   {
     title: "Web Development",
@@ -50,6 +50,189 @@ const techCategories = [
     skills: ["Git", "Visual Studio Code", "Artificial Intelligence", "Google Cloud Platform", "Claude", "Claude Code", "Oracle Cloud Infrastructure"]
   }
 ];
+
+/* const educationData = [
+    {
+        qualification: "BSc (Hons) Digital & Technology Solutions - Software Engineering Pathway",
+        institution: "Buckinghamshire New University",
+        years: "2023 – 2026",
+        grade: "First Class Honours",
+        modules: [
+            { name: "Dissertation", grade: "79%" },
+            { name: "Advanced Programming", grade: "75%" },
+            { name: "Enterprise Systems Development", grade: "75%" },
+            { name: "Design Patterns", grade: "82%" },
+            { name: "Data Structures & Algorithms", grade: "85%" },
+            { name: "Web Applications", grade: "76%" },
+            { name: "Software Engineering", grade: "87%" },
+            { name: "Mobile Systems", grade: "80%" },
+            { name: "Object Oriented Systems Development", grade: "76%" },
+            { name: "Computer Architectures", grade: "71%" },
+            { name: "Networking", grade: "74%" },
+            { name: "Programming Concepts", grade: "78%" },
+            { name: "Web Development", grade: "70%" },
+        ]
+    },
+    {
+        qualification: "BTEC Level 3 National Extended Diploma in Computing",
+        institution: "Burnley College",
+        years: "2021 – 2023",
+        grade: "D*D*D*",
+        modules: [
+        { name: "Computing Systems", grade: "Distinction*" },
+        { name: "IT Systems Security", grade: "Distinction*" },
+        { name: "Website Development", grade: "Distinction*" },
+        { name: "Mobile App Development", grade: "Distinction" },
+        { name: "Software Design & Development", grade: "Distinction*" },
+        ]
+    }
+];
+
+function EducationCard({ edu, idx }: { edu: typeof educationData[0], idx: number }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: idx * 0.1 }}
+      style={{
+        background: "linear-gradient(to top right, #0e0e0e, #2c2b2b)",
+        padding: "2rem",
+        borderRadius: "16px",
+        border: "1px solid #333333",
+        transition: "border-color 0.3s ease, box-shadow 0.3s ease"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "#666";
+        e.currentTarget.style.boxShadow = "0 12px 24px rgba(0, 0, 0, 0.4)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "#333333";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+        <div>
+          <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "#fff", marginBottom: "0.3rem" }}>
+            {edu.qualification}
+          </h3>
+          <p style={{ fontSize: "0.95rem", color: "#b2b2b2" }}>
+            {edu.institution}
+          </p>
+        </div>
+        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
+          <span style={{
+            backgroundColor: "rgba(50, 50, 50, 0.7)",
+            border: "1px solid rgba(80, 80, 80, 0.5)",
+            padding: "0.4rem 1rem",
+            borderRadius: "50px",
+            fontSize: "0.85rem",
+            fontWeight: 500,
+            color: "#e2e8f0"
+          }}>
+            {edu.years}
+          </span>
+          <span style={{
+            backgroundColor: "rgba(70, 70, 70, 0.5)",
+            border: "1px solid rgba(100, 100, 100, 0.3)",
+            padding: "0.4rem 1rem",
+            borderRadius: "50px",
+            fontSize: "0.85rem",
+            fontWeight: 600,
+            color: "#c0c0c0"
+          }}>
+            {edu.grade}
+          </span>
+        </div>
+      </div>
+
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          background: "none",
+          border: "1px solid #444",
+          color: "#aaa",
+          fontSize: "0.85rem",
+          padding: "0.4rem 1rem",
+          borderRadius: "50px",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.4rem",
+          transition: "all 0.2s"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "#666";
+          e.currentTarget.style.color = "#fff";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "#444";
+          e.currentTarget.style.color = "#aaa";
+        }}
+      >
+        {open ? "Hide modules" : "View modules"}
+        <ChevronRight
+          size={14}
+          style={{
+            transform: open ? "rotate(90deg)" : "rotate(0deg)",
+            transition: "transform 0.25s ease"
+          }}
+        />
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gap: "0.75rem",
+              marginTop: "1.25rem"
+            }}>
+              {edu.modules.map((mod) => (
+                <div
+                  key={mod.name}
+                  style={{
+                    backgroundColor: "#1a1a1a",
+                    border: "1px solid #2e2e2e",
+                    borderRadius: "10px",
+                    padding: "0.75rem 1rem",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "0.5rem"
+                  }}
+                >
+                  <span style={{ fontSize: "0.85rem", color: "#cbd5e1" }}>{mod.name}</span>
+                  <span style={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    color: "#999",
+                    backgroundColor: "#252525",
+                    border: "1px solid #333",
+                    borderRadius: "6px",
+                    padding: "0.25rem 0.6rem",
+                    whiteSpace: "nowrap"
+                  }}>
+                    {mod.grade}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+} */
 
 export default function AboutClient() {
   const [current, setCurrent] = useState(0);
@@ -114,7 +297,7 @@ export default function AboutClient() {
         </p>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          {["SuiteScript 2.1", "NetSuite Workflows", "System Integrations", "WMS Solutions"].map((skill) => (
+          {["SuiteScript 2.1", "SuiteFlow", "SuiteCloud Development Framework", "System Integrations", "WMS Solutions"].map((skill) => (
             <span
               key={skill}
               style={{
@@ -210,7 +393,21 @@ export default function AboutClient() {
         ))}
       </div>
 
+{/* 
       <hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+<h2 className="section-title" id="education">Education</h2>
+<p style={{ fontSize: 16, color: '#b2b2b2', marginBottom: '2rem' }}>
+  My academic background and qualifications
+</p>
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
+  {educationData.map((edu, idx) => (
+    <EducationCard key={edu.qualification} edu={edu} idx={idx} />
+  ))}
+</div> */}
+
+<hr style={{ backgroundColor: '#333333', borderTop: '2px solid #333333', marginTop: '2rem', marginBottom: '2rem' }} />
+
 
       {/* Projects Section */}
       <h2 className="section-title" id="personalProjects">Personal Projects</h2>

@@ -6,8 +6,8 @@ export async function GET(request: Request) {
 
     const pages = [
         { url: `https://${domainToUse}`, lastmod: '2025-05-09' },
-        { url: `https://${domainToUse}/projects`, lastmod: '2026-06-03' },
-        { url: `https://${domainToUse}/about`, lastmod: '2025-06-04' },
+        { url: `https://${domainToUse}/projects`, lastmod: '2026-09-07' },
+        { url: `https://${domainToUse}/about`, lastmod: '2026-09-07' },
         { url: `https://${domainToUse}/contact`, lastmod: '2025-05-11' },
         { url: `https://${domainToUse}/privacy`, lastmod: '2025-06-03' },
     ];
